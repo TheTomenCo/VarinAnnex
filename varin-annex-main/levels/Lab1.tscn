@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cuaejbn6posd0"]
 
-[ext_resource type="PackedScene" uid="uid://c3eqngcdsk8xp" path="res://scenes/PC.tscn" id="1_25qeb"]
+[ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
 [ext_resource type="PackedScene" uid="uid://uw1v3o4g56yx" path="res://scenes/wall.tscn" id="2_qpwx5"]
 [ext_resource type="PackedScene" uid="uid://4jx8wrpsrhbr" path="res://scenes/floor.tscn" id="3_ysste"]
@@ -13,7 +13,7 @@
 script = ExtResource("1_qpwx5")
 
 [node name="player" parent="." instance=ExtResource("1_25qeb")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1580887, 1.1189444, 0.24001756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1580887, 1.1189444, 0.24001756)
 
 [node name="utility" parent="." instance=ExtResource("2_qpwx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0654227, -8.515821, 0.21605346, 0.015543938)

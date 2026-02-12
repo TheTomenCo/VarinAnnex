@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://by2rfnapqdr0h"]
+
+[ext_resource type="PackedScene" uid="uid://4jx8wrpsrhbr" path="res://scenes/floor.tscn" id="1_7kaql"]
+[ext_resource type="Script" uid="uid://dvpj8q1g5i803" path="res://levels/warehouse.gd" id="1_d3jqc"]
+[ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="3_d3jqc"]
+
+[sub_resource type="Environment" id="Environment_d3jqc"]
+
+[node name="Warehouse" type="Node3D"]
+script = ExtResource("1_d3jqc")
+
+[node name="floor" parent="." instance=ExtResource("1_7kaql")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d3jqc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.58375376, 0.8119307, 0, -0.8119307, 0.58375376, 0, 8.033312, 7.457816)
+
+[node name="player" parent="." instance=ExtResource("3_d3jqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5330277, 1.1189443, 1.279085)

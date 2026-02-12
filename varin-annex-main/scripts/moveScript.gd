@@ -1,7 +1,8 @@
 extends CharacterBody3D
 const SPEED = 25.0
 const BOOST = 580.0
-const JUMP_VELOCITY = 40.0
+const JUMP_VELOCITY = 4.0
+var doubleJumped = false
 
 #start-up function
 func _ready():
@@ -22,10 +23,14 @@ func _physics_process(delta: float) -> void:
 
 #jump action
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		doubleJumped = false
+		velocity.y = JUMP_VELOCITY
+	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor() and not doubleJumped:
+		doubleJumped = true
 		velocity.y = JUMP_VELOCITY
 
 #input for directional travel
-	var input_dir := Input.get_vector("backward", "forward", "left", "right")
+	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	#need to add a dash, i.e. current direction * BOOST
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
