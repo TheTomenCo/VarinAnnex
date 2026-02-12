@@ -26,4 +26,4 @@ Exports/
 # Plugin specific
 addons/script-ide/*
 
-.tmp
+*.tmp
