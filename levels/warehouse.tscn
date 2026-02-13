@@ -10,12 +10,20 @@
 script = ExtResource("1_d3jqc")
 
 [node name="floor" parent="." instance=ExtResource("1_7kaql")]
+transform = Transform3D(110.83358, 0, 0, 0, 0.23788866, 0, 0, 0, 100.05013, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d3jqc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.58375376, 0.8119307, 0, -0.8119307, 0.58375376, 0, 8.033312, 7.457816)
+light_energy = 2.485
 
 [node name="player" parent="." instance=ExtResource("3_d3jqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5330277, 1.1189443, 1.279085)
+transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 2, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5837538, 0.8119308, 0, -0.8119308, 0.5837538, 0, 7.9810724, 7.457816)
+light_energy = 16.0
+light_indirect_energy = 1.33
+omni_range = 40.816

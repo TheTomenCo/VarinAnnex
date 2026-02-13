@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n8qb4"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p1a4w"]
 
 [node name="player" type="Node3D"]
 
@@ -16,10 +16,7 @@ mesh = SubResource("CapsuleMesh_p1a4w")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TotalPlayer"]
-shape = SubResource("CapsuleShape3D_n8qb4")
-
-[node name="Camera3D" type="Camera3D" parent="TotalPlayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3974629, 0)
+shape = SubResource("CapsuleShape3D_p1a4w")
 
 [node name="dashTimer" type="Timer" parent="TotalPlayer"]
 process_callback = 0
@@ -28,3 +25,8 @@ one_shot = true
 
 [node name="dashCooldown" type="Timer" parent="TotalPlayer"]
 one_shot = true
+
+[node name="CameraContainer" type="Node3D" parent="TotalPlayer"]
+
+[node name="Camera3D" type="Camera3D" parent="TotalPlayer/CameraContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7950275, 0)
