@@ -13,7 +13,7 @@ var input_dir
 #start-up function
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	cam = $CameraContainer/Camera3D
+	cam = $CameraContainer
 
 #camera rotation
 func _unhandled_input(event: InputEvent) -> void:

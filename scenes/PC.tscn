@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://l0np81ivq3dg"]
+[gd_scene load_steps=5 format=3 uid="uid://l0np81ivq3dg"]
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
+[ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/weapon.tscn" id="2_fioyg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 
@@ -27,6 +28,8 @@ one_shot = true
 one_shot = true
 
 [node name="CameraContainer" type="Node3D" parent="TotalPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)
 
 [node name="Camera3D" type="Camera3D" parent="TotalPlayer/CameraContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7950275, 0)
+
+[node name="Weapon" parent="TotalPlayer/CameraContainer" instance=ExtResource("2_fioyg")]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyows3brk4xbq"]
+
+[ext_resource type="Script" uid="uid://c876nhm06x5p8" path="res://scripts/weapon.gd" id="1_xasec"]
+
+[node name="Weapon" type="Node3D"]
+script = ExtResource("1_xasec")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.4002527e-06, -0.9999997, 0, 32.034046, -4.3711378e-08, 0, 0, 0)
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
