@@ -17,7 +17,11 @@ func _process(delta):
 			print(Ammo, " bullets left")
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
-	if Input.is_action_just_pressed("reload"):
+	if Input.is_action_just_pressed("reload") and $ReloadTimer.is_stopped():
 		print("Reloading")
 		$ReloadTimer.start()
-		Ammo = MaxAmmo
+	if get_tree().root.get_node("Lab1/Hud"):
+		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+
+func _on_ReloadTimer_timeout():
+	Ammo = MaxAmmo

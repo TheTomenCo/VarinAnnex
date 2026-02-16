@@ -2,6 +2,8 @@ extends CharacterBody3D
 const SPEED = 25.0
 const BOOST = 580.0
 const JUMP_VELOCITY = 10.0
+var MaxHP = 100
+var HP = MaxHP
 var doubleJumped = false
 var sliding = false
 var can_slide = true	
@@ -14,6 +16,7 @@ var input_dir
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
+	fullHeal()
 
 #camera rotation
 func _unhandled_input(event: InputEvent) -> void:
@@ -89,3 +92,13 @@ func _physics_process(delta: float) -> void:
 			#print_debug("cooldown reset")
 			pass
 	move_and_slide()
+	
+func modifyHP(HPAmount):
+	HP += HPAmount
+	if get_tree().root.get_node("Lab1/Hud"):
+		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+
+func fullHeal():
+	HP = MaxHP
+	if get_tree().root.get_node("Lab1/Hud"):
+		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
