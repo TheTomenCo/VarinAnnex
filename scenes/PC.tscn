@@ -10,9 +10,12 @@
 [node name="player" type="Node3D"]
 
 [node name="TotalPlayer" type="CharacterBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_upsj2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TotalPlayer"]
+layers = 3
 mesh = SubResource("CapsuleMesh_p1a4w")
 skeleton = NodePath("../..")
 

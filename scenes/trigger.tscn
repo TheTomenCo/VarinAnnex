@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf4etqq7pkd28"]
+
+[ext_resource type="Script" uid="uid://b3cm7j20s1k0p" path="res://scripts/trigger.gd" id="1_du5ex"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g77je"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du5ex"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 0.3372549)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7fap0"]
+material = SubResource("StandardMaterial3D_du5ex")
+
+[node name="Trigger" type="Node3D"]
+script = ExtResource("1_du5ex")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_g77je")
+debug_color = Color(1.2068814, 0, 1.080236, 1)
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_7fap0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

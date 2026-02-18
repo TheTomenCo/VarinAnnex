@@ -94,7 +94,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func modifyHP(HPAmount):
-	HP += HPAmount
+	if HP + HPAmount >= 0:
+		HP += HPAmount
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
 

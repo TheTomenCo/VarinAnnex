@@ -1,6 +1,7 @@
 extends Node
 var MaxAmmo = 10
 var Ammo = MaxAmmo
+var TotalAmmo = 100 #Extra magazines
 var Damage = 10
 var Cooldown = 0.5
 var ReloadTime = 0.5
@@ -8,6 +9,7 @@ var ReloadTime = 0.5
 func _ready() -> void:
 	$CooldownTimer.wait_time = Cooldown
 	$ReloadTimer.wait_time = ReloadTime
+	modifyAmmo(0)
 
 func _process(delta):
 	if Input.is_action_just_pressed("shoot") and $CooldownTimer.is_stopped() and $ReloadTimer.is_stopped():
@@ -17,11 +19,17 @@ func _process(delta):
 			print(Ammo, " bullets left")
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
-	if Input.is_action_just_pressed("reload") and $ReloadTimer.is_stopped():
+	if Input.is_action_just_pressed("reload") and $ReloadTimer.is_stopped() and TotalAmmo > 0:
 		print("Reloading")
 		$ReloadTimer.start()
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
 
 func _on_ReloadTimer_timeout():
+	modifyAmmo(Ammo-MaxAmmo)
 	Ammo = MaxAmmo
+	
+func modifyAmmo(AmmoAmount):
+	TotalAmmo += AmmoAmount
+	if get_tree().root.get_node("Lab1/Hud"):
+		get_tree().root.get_node("Lab1/Hud").changeTotalAmmo(TotalAmmo)
