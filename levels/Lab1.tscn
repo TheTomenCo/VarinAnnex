@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=12 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
@@ -8,9 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://1gjut31kb3w" path="res://scenes/industrialCeilingLight.blend" id="5_ysste"]
 [ext_resource type="PackedScene" uid="uid://dn4dae3qeue2i" path="res://scenes/stairs.tscn" id="7_meefi"]
 [ext_resource type="PackedScene" uid="uid://c35cg4jnlgr2r" path="res://scenes/pillar.tscn" id="8_j5mio"]
+[ext_resource type="PackedScene" uid="uid://bf4etqq7pkd28" path="res://scenes/trigger.tscn" id="9_7w6vf"]
+[ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/HUD.tscn" id="9_eyj1r"]
+[ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
 
 [node name="Lab1" type="Node3D"]
 script = ExtResource("1_qpwx5")
+
+[node name="Trigger" parent="." instance=ExtResource("9_7w6vf")]
+transform = Transform3D(2.589839, 0, 0.33127928, 0, 2.584274, 0, -2.589839, 0, 0.33127928, 75.79623, 6.59927, -14.889588)
 
 [node name="player" parent="." instance=ExtResource("1_25qeb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1580887, 1.1189444, 0.24001756)
@@ -374,3 +380,12 @@ transform = Transform3D(-4.3711385e-08, 0, 0.21394025, 0, 1, 0, -4.674202, 0, -4
 
 [node name="floor3" parent="corridors" instance=ExtResource("3_ysste")]
 transform = Transform3D(-4.3711385e-08, 0, 0.21394025, 0, 1, 0, -4.674202, 0, -4.3711385e-08, -1.2486842, 0, -5.956204)
+
+[node name="Hud" parent="." instance=ExtResource("9_eyj1r")]
+
+[node name="Pickup" parent="." instance=ExtResource("11_1igf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, 14.386034)
+
+[node name="Pickup2" parent="." instance=ExtResource("11_1igf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -10.824983)
+type = 0
