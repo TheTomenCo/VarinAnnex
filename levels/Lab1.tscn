@@ -389,3 +389,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, 14.3860
 [node name="Pickup2" parent="." instance=ExtResource("11_1igf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -10.824983)
 type = 0
+ammoAmount = 100

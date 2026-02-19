@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://deki7j3vqsn7k"]
+[gd_scene load_steps=6 format=3 uid="uid://deki7j3vqsn7k"]
 
 [ext_resource type="Script" uid="uid://d3wgnt2oisk3k" path="res://scripts/pickup.gd" id="1_pg2rt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cqbe"]
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg2rt"]
 albedo_color = Color(1, 0, 0, 1)
@@ -15,9 +18,11 @@ rings = 0
 [node name="Pickup" type="Node3D"]
 script = ExtResource("1_pg2rt")
 type = 1
+ammoAmount = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018641949, -5.9604645e-08, -0.0040712357)
+material_override = SubResource("StandardMaterial3D_7cqbe")
 mesh = SubResource("CylinderMesh_7cqbe")
 
 [node name="Area3D" type="Area3D" parent="."]

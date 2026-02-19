@@ -94,10 +94,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func modifyHP(HPAmount):
-	if HP + HPAmount >= 0:
+	if HP + HPAmount >= 0 and $invincibilityTimer.is_stopped():
 		HP += HPAmount
-	if get_tree().root.get_node("Lab1/Hud"):
-		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+		if HPAmount < 0:
+			$invincibilityTimer.start()
+		if get_tree().root.get_node("Lab1/Hud"):
+			get_tree().root.get_node("Lab1/Hud").changeHp(HP)
 
 func fullHeal():
 	HP = MaxHP

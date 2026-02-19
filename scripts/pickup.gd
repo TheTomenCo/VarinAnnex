@@ -2,6 +2,7 @@
 extends Node3D
 enum Type {ammo, health}
 @export var type: Type = Type.ammo
+@export var Amount = 100
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -15,9 +16,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not Engine.is_editor_hint():
 		if body.is_class("CharacterBody3D"):
 			if type == Type.health:
-				body.fullHeal()
+				body.modifyHP(Amount)
 			elif type == Type.ammo:
-				body.get_node("CameraContainer/Weapon").modifyAmmo(100)
+				body.get_node("CameraContainer/Weapon").modifyAmmo(Amount)
 			self.queue_free()
 
 func change_color():
