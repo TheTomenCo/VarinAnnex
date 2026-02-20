@@ -18,7 +18,7 @@ rings = 0
 [node name="Pickup" type="Node3D"]
 script = ExtResource("1_pg2rt")
 type = 1
-ammoAmount = null
+Amount = 100
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018641949, -5.9604645e-08, -0.0040712357)
