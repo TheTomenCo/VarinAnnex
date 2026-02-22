@@ -1,8 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://clj2mnfu3s1w3"]
 
-[ext_resource type="Script" uid="uid://bxumf00nlriff" path="res://scenes/door.gd" id="1_uvdjg"]
+[ext_resource type="Script" uid="uid://bxumf00nlriff" path="res://scripts/door.gd" id="1_uvdjg"]
 [ext_resource type="Material" uid="uid://cpou4v1g0hbb0" path="res://materials/door/actual_door.tres" id="2_la1wf"]
 [ext_resource type="Material" uid="uid://cy4rnmx6ltixt" path="res://materials/door/border.tres" id="3_18pbm"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
 

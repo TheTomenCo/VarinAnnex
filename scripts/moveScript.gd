@@ -1,5 +1,5 @@
 extends CharacterBody3D
-const SPEED = 6.0
+const SPEED = 25.0
 const BOOST = 580.0
 const JUMP_VELOCITY = 10.0
 var MaxHP = 100
