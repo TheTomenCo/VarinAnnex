@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyows3brk4xbq"]
+[gd_scene load_steps=2 format=3 uid="uid://c4xnswesf0mms"]
 
-[ext_resource type="Script" uid="uid://c876nhm06x5p8" path="res://scripts/weapon.gd" id="1_xasec"]
+[ext_resource type="Script" uid="uid://ddehun2cnkh8d" path="res://scripts/shotgun.gd" id="1_voyse"]
 
-[node name="Weapon" type="Node3D"]
-script = ExtResource("1_xasec")
+[node name="Shotgun" type="Node3D"]
+script = ExtResource("1_voyse")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1.4002527e-06, -0.9999997, 0, 32.034046, -4.3711378e-08, 0, 0, 0)
