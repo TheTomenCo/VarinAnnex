@@ -1,12 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://l0np81ivq3dg"]
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" path="res://scenes/weapon.tscn" id="2_fioyg"]
-=======
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="2_fioyg"]
 [ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="3_bgq5m"]
->>>>>>> 39af7c43909c268f6c1b9fb6567e1d9ee3b9b789
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 
