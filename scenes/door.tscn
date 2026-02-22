@@ -1,3 +1,54 @@
-[gd_scene format=3 uid="uid://clj2mnfu3s1w3"]
+[gd_scene load_steps=5 format=3 uid="uid://clj2mnfu3s1w3"]
+
+[ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://bxumf00nlriff" path="res://scenes/door.gd" id="1_uvdjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_83dcw"]
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_uvdjg")
+
+[node name="ActualDoor" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 0.25, 0, 1.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActualDoor"]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ActualDoor"]
+mesh = SubResource("BoxMesh_83dcw")
+skeleton = NodePath("../..")
+
+[node name="Border" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 2.5, 0, 0, 0, 0.4, 1.05, 1.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border"]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Border"]
+mesh = SubResource("BoxMesh_83dcw")
+skeleton = NodePath("../..")
+
+[node name="Border2" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 2.5, 0, 0, 0, 0.4, -1.05, 1.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border2"]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Border2"]
+mesh = SubResource("BoxMesh_83dcw")
+skeleton = NodePath("../..")
+
+[node name="Border3" type="Node3D" parent="."]
+transform = Transform3D(2.2, 0, 0, 0, 0.1, 0, 0, 0, 0.4, 0, 2.55, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Border3"]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Border3"]
+mesh = SubResource("BoxMesh_83dcw")
+skeleton = NodePath("../..")
+
+[node name="player" parent="." instance=ExtResource("1_hpvv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
