@@ -1,5 +1,5 @@
 extends CharacterBody3D
-const SPEED = 25.0
+var SPEED = 25.0
 const BOOST = 580.0
 const JUMP_VELOCITY = 10.0
 var MaxHP = 100
@@ -14,6 +14,8 @@ var input_dir
 
 #start-up function
 func _ready():
+	SPEED = get_meta("speed", SPEED)
+	#print(SPEED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
 	fullHeal()
