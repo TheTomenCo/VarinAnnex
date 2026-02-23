@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv75mh5ueo5t0"]
+[gd_scene load_steps=14 format=3 uid="uid://cv75mh5ueo5t0"]
 
 [ext_resource type="PackedScene" uid="uid://clj2mnfu3s1w3" path="res://scenes/door.tscn" id="1_5v7nx"]
 [ext_resource type="PackedScene" uid="uid://sadimw2101bb" path="res://scenes/boxes.tscn" id="2_rpeva"]
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="3_u0ch4"]
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="4_s2rwb"]
 [ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="5_fsycw"]
+[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scenes/door_handler.gd" id="6_s2rwb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ip4aq"]
 
@@ -16,6 +17,7 @@ albedo_color = Color(0.32544088, 0.3254409, 0.32544088, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p1a4w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u0ch4"]
+ground_bottom_color = Color(0.38431373, 0.45490196, 0.54901963, 1)
 
 [sub_resource type="Sky" id="Sky_s2rwb"]
 sky_material = SubResource("ProceduralSkyMaterial_u0ch4")
@@ -44,6 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6343505, 4.4608073)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("3_u0ch4")
+metadata/speed = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player/AbsolutePlayer"]
 layers = 3
@@ -73,24 +76,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)
 [node name="weaponHandler" parent="player/AbsolutePlayer/CameraContainer" instance=ExtResource("4_s2rwb")]
 weapons = Array[PackedScene]([ExtResource("5_fsycw")])
 
+[node name="doorHandler" type="Node3D" parent="player/AbsolutePlayer/CameraContainer"]
+script = ExtResource("6_s2rwb")
+
+[node name="RayCast3D" type="RayCast3D" parent="player/AbsolutePlayer/CameraContainer/doorHandler"]
+transform = Transform3D(1, 0, 0, 0, -8.742278e-08, -1, 0, 2, -4.371139e-08, 0, 0, 0)
+debug_shape_thickness = 5
+
+[node name="Control" type="Control" parent="player/AbsolutePlayer/CameraContainer/doorHandler"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 192.0
+
+[node name="Label" type="Label" parent="player/AbsolutePlayer/CameraContainer/doorHandler/Control"]
+clip_contents = true
+layout_mode = 0
+offset_left = 208.0
+offset_top = 184.0
+offset_right = 592.0
+offset_bottom = 376.0
+text = "Press %s to open"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rpeva")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.76399875, -0.35342, 0.539815, 0, 0.83664006, 0.5477531, -0.6452177, -0.4184827, 0.639192, 0, 5.0937877, 0)
 shadow_enabled = true
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 384.0
-offset_bottom = 192.0
-
-[node name="Label" type="Label" parent="Control"]
-clip_contents = true
-layout_mode = 0
-offset_right = 384.0
-offset_bottom = 192.0
-text = "Press <key> to open"
-horizontal_alignment = 1
-vertical_alignment = 1
