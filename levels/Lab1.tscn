@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=14 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/HUD.tscn" id="9_eyj1r"]
 [ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
 [ext_resource type="PackedScene" uid="uid://c4xnswesf0mms" path="res://scenes/shotgun.tscn" id="12_tfvxv"]
+[ext_resource type="PackedScene" uid="uid://0domy5467ke6" path="res://scenes/stairOrchestrator.tscn" id="13_17ebi"]
 
 [node name="Lab1" type="Node3D"]
 script = ExtResource("1_qpwx5")
@@ -20,7 +21,7 @@ script = ExtResource("1_qpwx5")
 transform = Transform3D(2.589839, 0, 0.33127928, 0, 2.584274, 0, -2.589839, 0, 0.33127928, 75.79623, 6.59927, -14.889588)
 
 [node name="player" parent="." instance=ExtResource("1_25qeb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1580887, 1.1189444, 0.24001756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.1, 0)
 
 [node name="utility" parent="." instance=ExtResource("2_qpwx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0654227, -8.515821, 0.21605346, 0.015543938)
@@ -308,3 +309,6 @@ type = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -0.5517349)
 type = 2
 WeaponScene = ExtResource("12_tfvxv")
+
+[node name="StairOrchestrator" parent="." instance=ExtResource("13_17ebi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5608273, 0.8111861, 0)
