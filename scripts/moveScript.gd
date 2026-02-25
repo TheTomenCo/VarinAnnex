@@ -1,7 +1,7 @@
 extends CharacterBody3D
-var SPEED = 25.0
-const BOOST = 580.0
-const JUMP_VELOCITY = 10.0
+var SPEED = 5.0
+const BOOST = 520.0
+const JUMP_VELOCITY = 6.0
 var MaxHP = 100
 var HP = MaxHP
 var doubleJumped = false
@@ -37,12 +37,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		doubleJumped = false
 		velocity.y = JUMP_VELOCITY
+	#double jump
 	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor() and not doubleJumped:
 		doubleJumped = true
 		velocity.y = JUMP_VELOCITY
+		$doubleJumpStream.play()
 
 #slide
 	if Input.is_action_pressed("slide") and Vector3(velocity.x, 0, velocity.z).length() > 2 and can_slide and is_on_floor():
+		$slideStream.play()
 		sliding = true
 		cam.transform.origin = Vector3(0, -0.3, 0)
 		$CollisionShape3D.shape = load("res://scenes/PlayerCollisionSlide.tres")
@@ -81,6 +84,7 @@ func _physics_process(delta: float) -> void:
 		if direction and Input.is_action_just_pressed("dash") and $dashCooldown.time_left == 0:
 			$dashTimer.start()
 			$dashCooldown.start()
+			$dashStream.play()
 			#print_debug("dash started")
 
 #during dash, increase speed
