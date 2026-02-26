@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://clj2mnfu3s1w3" path="res://scenes/door.tscn" id="1_5v7nx"]
 [ext_resource type="PackedScene" uid="uid://sadimw2101bb" path="res://scenes/boxes.tscn" id="2_rpeva"]
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="3_rpeva"]
+[ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="3_u0ch4"]
+[ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="4_s2rwb"]
+[ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="5_fsycw"]
+[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="6_s2rwb"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_ip4aq"]
 

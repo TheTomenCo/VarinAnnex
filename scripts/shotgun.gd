@@ -31,7 +31,8 @@ func shoot():
 						hits += 1
 						collider = child
 					if child != $RayCast3D:
-						remove_child(child)
+						pass
+						#remove_child(child)
 			if collider:
 				print(hits, " pellets hit ", collider.get_collider().get_parent().name, " at ", collider.get_collision_point(), " and dealt a total of ", Damage*hits, " damage")
 				

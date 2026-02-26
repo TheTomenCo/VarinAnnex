@@ -7,7 +7,7 @@ var MaxHP = 100
 var HP = MaxHP
 var doubleJumped = false
 var sliding = false
-var can_slide = true	
+var can_slide = true
 var slide_speed = speed + 10
 var cam
 var direction
@@ -33,17 +33,22 @@ func _physics_process(delta: float) -> void:
 #gravity innit
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		if position.y <= -10:
+			position = Vector3(-1, 1.1, 0)
 
 #jump action
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		doubleJumped = false
 		velocity.y = JUMP_VELOCITY
+	#double jump
 	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor() and not doubleJumped:
 		doubleJumped = true
 		velocity.y = JUMP_VELOCITY
+		$doubleJumpStream.play()
 
 #slide
 	if Input.is_action_pressed("slide") and Vector3(velocity.x, 0, velocity.z).length() > 2 and can_slide and is_on_floor():
+		$slideStream.play()
 		sliding = true
 		cam.transform.origin = Vector3(0, -0.3, 0)
 		$CollisionShape3D.shape = load("res://scenes/PlayerCollisionSlide.tres")
@@ -70,8 +75,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, speed/6)
-			velocity.z = move_toward(velocity.z, 0, speed/6)
+			velocity.x = move_toward(velocity.x, 0, speed / 6)
+			velocity.z = move_toward(velocity.z, 0, speed / 6)
 
 #dashcooldown ended
 		if $dashCooldown.time_left == 0:
@@ -82,6 +87,7 @@ func _physics_process(delta: float) -> void:
 		if direction and Input.is_action_just_pressed("dash") and $dashCooldown.time_left == 0:
 			$dashTimer.start()
 			$dashCooldown.start()
+			$dashStream.play()
 			#print_debug("dash started")
 
 #during dash, increase speed
