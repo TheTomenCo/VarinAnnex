@@ -307,6 +307,6 @@ type = 2
 WeaponScene = ExtResource("12_tfvxv")
 
 [node name="StairOrchestrator" parent="." instance=ExtResource("13_17ebi")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 54.817917, -13.938967, 1.2632751)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.705833, -13.858416, 1.2632751)
 width = 40
 steps = 28
