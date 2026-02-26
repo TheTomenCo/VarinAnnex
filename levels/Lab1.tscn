@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=13 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://4jx8wrpsrhbr" path="res://scenes/floor.tscn" id="3_ysste"]
 [ext_resource type="PackedScene" uid="uid://btv6n0jyeuf15" path="res://scenes/metalCabinet.blend" id="4_meefi"]
 [ext_resource type="PackedScene" uid="uid://1gjut31kb3w" path="res://scenes/industrialCeilingLight.blend" id="5_ysste"]
-[ext_resource type="PackedScene" uid="uid://dn4dae3qeue2i" path="res://scenes/stairs.tscn" id="7_meefi"]
 [ext_resource type="PackedScene" uid="uid://c35cg4jnlgr2r" path="res://scenes/pillar.tscn" id="8_j5mio"]
 [ext_resource type="PackedScene" uid="uid://bf4etqq7pkd28" path="res://scenes/trigger.tscn" id="9_7w6vf"]
 [ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/HUD.tscn" id="9_eyj1r"]
@@ -284,9 +283,6 @@ transform = Transform3D(0.02780645, 0, 0, 0, 28.59745, 0, 0, 0, 0.024917917, -0.
 [node name="pillar3" parent="mainFloor" instance=ExtResource("8_j5mio")]
 transform = Transform3D(0.02780645, 0, 0, 0, 28.59745, 0, 0, 0, 0.024917915, -0.6971146, 26.381582, 0.70487183)
 
-[node name="stairs" parent="mainFloor" instance=ExtResource("7_meefi")]
-transform = Transform3D(-5.0683884e-09, 0, 0.28628144, 0, 109.27396, 0, -0.1159512, 0, -1.2513756e-08, -0.821, -4.565, 0)
-
 [node name="corridors" parent="." instance=ExtResource("3_ysste")]
 transform = Transform3D(97.00888, 0, 0, 0, 0.23788866, 0, 0, 0, 20.754105, 205.63437, 0, 0.06414688)
 
@@ -311,4 +307,6 @@ type = 2
 WeaponScene = ExtResource("12_tfvxv")
 
 [node name="StairOrchestrator" parent="." instance=ExtResource("13_17ebi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5608273, 0.8111861, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 54.817917, -13.938967, 1.2632751)
+width = 40
+steps = 28
