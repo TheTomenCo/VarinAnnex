@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://0domy5467ke6"]
 
-[ext_resource type="Script" uid="uid://dfird0imbcsk2" path="res://scripts/stair_orchestrator.gd" id="1_lq0m6"]
+[ext_resource type="Script" uid="uid://s8y8vqebxuu7" path="res://scripts/stair_orchestrator.gd" id="1_lq0m6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fburj"]
 
@@ -8,6 +8,8 @@
 
 [node name="StairOrchestrator" type="Node3D"]
 script = ExtResource("1_lq0m6")
+width = 1
+steps = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -16,5 +18,5 @@ mesh = SubResource("BoxMesh_fburj")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0.15, -0.15)
+transform = Transform3D(1, 0, 0, 0, 0.44721356, -0.89442724, 0, 0.89442724, 0.44721356, 0, 0.15580231, -0.07790113)
 shape = SubResource("BoxShape3D_gll7s")
