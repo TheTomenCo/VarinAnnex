@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="3_u0ch4"]
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="4_s2rwb"]
 [ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="5_fsycw"]
-[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scenes/door_handler.gd" id="6_s2rwb"]
+[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="6_s2rwb"]
+
 
 [sub_resource type="BoxMesh" id="BoxMesh_ip4aq"]
 
