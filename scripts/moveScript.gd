@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 #gravity innit
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		if position.y <= -10:
+		if position.y <= -50:
 			position = Vector3(-1, 1.1, 0)
 
 #jump action
