@@ -1,5 +1,6 @@
+#@tool
 extends CharacterBody3D
-var SPEED = 25.0
+@export var speed = 25.0
 const BOOST = 580.0
 const JUMP_VELOCITY = 10.0
 var MaxHP = 100
@@ -7,14 +8,14 @@ var HP = MaxHP
 var doubleJumped = false
 var sliding = false
 var can_slide = true	
-var slide_speed = SPEED + 10
+var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
 
 #start-up function
 func _ready():
-	SPEED = get_meta("speed", SPEED)
+	#SPEED = get_meta("speed", SPEED)
 	#print(SPEED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
@@ -52,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	elif not Input.is_action_pressed("slide"):
 		sliding = false
 		can_slide = true
-		slide_speed = SPEED + 10
+		slide_speed = speed + 10
 	elif Vector3(velocity.x, 0, velocity.z).length() <= 2:
 		can_slide = false
 		sliding = false
@@ -66,11 +67,11 @@ func _physics_process(delta: float) -> void:
 
 #base speed levels
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED/6)
-			velocity.z = move_toward(velocity.z, 0, SPEED/6)
+			velocity.x = move_toward(velocity.x, 0, speed/6)
+			velocity.z = move_toward(velocity.z, 0, speed/6)
 
 #dashcooldown ended
 		if $dashCooldown.time_left == 0:
