@@ -33,9 +33,13 @@ func createStairs():
 	$StaticBody3D.add_child(topStepCollision)
 	for i in range(steps):
 		var step = $StaticBody3D/MeshInstance3D.duplicate()
+		var stepCollision = topStepCollision.duplicate()
 		$StaticBody3D.add_child(step)
 		step.scale += Vector3(0, i * steepness, 0)
 		step.position += Vector3(0, (i * steepness)/2, i)
+		stepCollision.scale = step.scale
+		stepCollision.position = step.position
+		$StaticBody3D.add_child(stepCollision)
 	$StaticBody3D/CollisionShape3D.position = Vector3(0, (steps+1)*steepness/2.0, steps/2.0)
 	$StaticBody3D/CollisionShape3D.translate_object_local(Vector3(0, -1.75, 0))
 	$StaticBody3D/CollisionShape3D.scale.y = Vector2(steps, steps*steepness).length()
