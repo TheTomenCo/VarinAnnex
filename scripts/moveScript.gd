@@ -1,4 +1,3 @@
-#@tool
 extends CharacterBody3D
 @export var speed = 25.0
 const BOOST = 580.0
@@ -12,11 +11,8 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
-
 #start-up function
 func _ready():
-	#SPEED = get_meta("speed", SPEED)
-	#print(SPEED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
 	fullHeal()
@@ -100,6 +96,9 @@ func _physics_process(delta: float) -> void:
 			#print_debug("dash stopped")
 			#print_debug("cooldown reset")
 			pass
+			
+	if Input.is_key_pressed(KEY_C):
+		pSave()
 	move_and_slide()
 	
 func modifyHP(HPAmount):
@@ -114,3 +113,8 @@ func fullHeal():
 	HP = MaxHP
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+		
+func pSave():
+	var packedScene = PackedScene.new()
+	packedScene.pack(get_parent())
+	ResourceSaver.save(packedScene, "res://save.tscn")
