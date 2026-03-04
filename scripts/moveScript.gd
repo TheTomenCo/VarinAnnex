@@ -15,7 +15,7 @@ var input_dir
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
-	fullHeal()
+	modifyHP(0)
 
 #camera rotation
 func _unhandled_input(event: InputEvent) -> void:
@@ -96,9 +96,6 @@ func _physics_process(delta: float) -> void:
 			#print_debug("dash stopped")
 			#print_debug("cooldown reset")
 			pass
-			
-	if Input.is_key_pressed(KEY_C):
-		pSave()
 	move_and_slide()
 	
 func modifyHP(HPAmount):
@@ -113,8 +110,3 @@ func fullHeal():
 	HP = MaxHP
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
-		
-func pSave():
-	var packedScene = PackedScene.new()
-	packedScene.pack(get_parent())
-	ResourceSaver.save(packedScene, "res://save.tscn")
