@@ -1,11 +1,8 @@
 extends Node
 
+var paused = false
 
 func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
-			
 	if Input.is_action_just_pressed("unlock mouse"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			print_debug("unlocked")
