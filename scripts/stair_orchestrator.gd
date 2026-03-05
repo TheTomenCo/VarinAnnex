@@ -20,7 +20,7 @@ func _ready() -> void:
 	createStairs()
 
 func createStairs():
-	if is_instance_valid($StaticBody3D):
+	if has_node("StaticBody3D"):
 		for child in $StaticBody3D.get_children():
 			if child != $StaticBody3D/CollisionShape3D and child != $StaticBody3D/MeshInstance3D:
 				child.queue_free()
