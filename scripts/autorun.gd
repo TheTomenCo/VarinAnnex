@@ -1,7 +1,10 @@
 extends Node
 
+<<<<<<< HEAD
 var paused = false
 
+=======
+>>>>>>> 744f5c5eb5c2981ca7424e700bf79e6bb1c05cc1
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("unlock mouse"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

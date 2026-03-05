@@ -1,4 +1,3 @@
-#@tool
 extends CharacterBody3D
 @export var speed = 25.0
 const BOOST = 580.0
@@ -12,14 +11,11 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
-
 #start-up function
 func _ready():
-	#SPEED = get_meta("speed", SPEED)
-	#print(SPEED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
-	fullHeal()
+	modifyHP(0)
 
 #camera rotation
 func _unhandled_input(event: InputEvent) -> void:

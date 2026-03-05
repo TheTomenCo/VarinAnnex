@@ -19,6 +19,6 @@ mesh = SubResource("BoxMesh_fburj")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.44721356, -0.89442724, 0, 0.89442724, 0.44721356, 0, 0.15, -0.075)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.89442724, 0, 1.0000001, 0.44721356, 0, -0.2826237, -1.0652477)
 shape = SubResource("BoxShape3D_gll7s")
 debug_color = Color(0, 0.6, 0.69803923, 1)
