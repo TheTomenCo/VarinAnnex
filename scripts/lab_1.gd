@@ -1,15 +1,10 @@
 extends Node3D
 
-var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< HEAD
-	pass
-=======
 	print(1)
 
->>>>>>> 744f5c5eb5c2981ca7424e700bf79e6bb1c05cc1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

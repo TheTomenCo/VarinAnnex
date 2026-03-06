@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
 [ext_resource type="PackedScene" uid="uid://c4xnswesf0mms" path="res://scenes/shotgun.tscn" id="12_tfvxv"]
 [ext_resource type="PackedScene" uid="uid://0domy5467ke6" path="res://scenes/stairOrchestrator.tscn" id="13_17ebi"]
-[ext_resource type="PackedScene" uid="uid://cylrjynqhugy4" path="res://Menus/pause_menu.tscn" id="13_psfkb"]
 
 [node name="Lab1" type="Node3D"]
 script = ExtResource("1_qpwx5")
@@ -406,6 +405,3 @@ transform = Transform3D(-4.3711353e-08, 0, 25.025734, 0, 3.6940162, 0, -0.999999
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.68719, -13.863653, 7.2221713)
 width = 40
 steps = 28
-
-[node name="pauseMenu" parent="." instance=ExtResource("13_psfkb")]
-visible = false
