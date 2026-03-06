@@ -110,3 +110,25 @@ func fullHeal():
 	HP = MaxHP
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+		
+func save_data():
+	var weapons = $CameraContainer/weaponHandler
+	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
+	"hp" : HP,
+	"selected_weapon" : weapons.selected,
+	"weapons" : weapons.weapons, 
+	"ammo" : weapons.get_child(weapons.selected).Ammo, 
+	"total_ammo" : weapons.get_child(weapons.selected).TotalAmmo}
+	
+func load_data(data):
+	var weapons = $CameraContainer/weaponHandler
+	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
+	HP = int(data["hp"])
+	weapons.weapons = data["weapons"]
+	weapons.selected = data["selected_weapon"]
+	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
+	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
+	if get_tree().root.get_node("Lab1/Hud"):
+			get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+			get_tree().root.get_node("Lab1/Hud").changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
+			get_tree().root.get_node("Lab1/Hud").changeTotalAmmo(int(data["total_ammo"]))
