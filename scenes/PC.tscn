@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://l0np81ivq3dg"]
+[gd_scene load_steps=11 format=3 uid="uid://l0np81ivq3dg"]
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="2_fioyg"]
 [ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="3_bgq5m"]
-[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="4_kogni"]
 [ext_resource type="AudioStream" uid="uid://8d5j2aaq6nbe" path="res://SFX/chud.mp3" id="4_kogni"]
+[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="4_whqbp"]
 [ext_resource type="AudioStream" uid="uid://t43w5c27ftrr" path="res://SFX/CHUDDASH.mp3" id="5_fors6"]
 [ext_resource type="AudioStream" uid="uid://b5oxwp2tkq0cm" path="res://SFX/DAMAGE.mp3" id="6_2n22x"]
 [ext_resource type="AudioStream" uid="uid://25annkmjmp2h" path="res://SFX/SKRRRRRRRRRRR.mp3" id="7_jadj3"]
@@ -44,18 +44,20 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)
 
 [node name="Camera3D" type="Camera3D" parent="AbsolutePlayer/CameraContainer"]
+fov = 37.849285
 
 [node name="weaponHandler" parent="AbsolutePlayer/CameraContainer" instance=ExtResource("2_fioyg")]
 weapons = Array[PackedScene]([ExtResource("3_bgq5m")])
 
 [node name="doorHandler" type="Node3D" parent="AbsolutePlayer/CameraContainer"]
-script = ExtResource("4_kogni")
+script = ExtResource("4_whqbp")
 
 [node name="RayCast3D" type="RayCast3D" parent="AbsolutePlayer/CameraContainer/doorHandler"]
 transform = Transform3D(1, 0, 0, 0, -8.742278e-08, -1, 0, 2, -4.371139e-08, 0, 0, 0)
 debug_shape_thickness = 5
 
 [node name="Control" type="Control" parent="AbsolutePlayer/CameraContainer/doorHandler"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 384.0
@@ -71,6 +73,7 @@ offset_bottom = 376.0
 text = "Press %s to open"
 horizontal_alignment = 1
 vertical_alignment = 1
+
 [node name="doubleJumpStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
 stream = ExtResource("4_kogni")
 
