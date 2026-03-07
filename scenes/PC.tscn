@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="4_whqbp"]
 [ext_resource type="AudioStream" uid="uid://t43w5c27ftrr" path="res://SFX/CHUDDASH.mp3" id="5_fors6"]
 [ext_resource type="AudioStream" uid="uid://b5oxwp2tkq0cm" path="res://SFX/DAMAGE.mp3" id="6_2n22x"]
-[ext_resource type="AudioStream" uid="uid://25annkmjmp2h" path="res://SFX/SKRRRRRRRRRRR.mp3" id="7_jadj3"]
+[ext_resource type="AudioStream" uid="uid://25annkmjmp2h" path="res://SFX/SKRRRRRRRRRRR.mp3" id="7_whqbp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 
@@ -78,12 +78,12 @@ vertical_alignment = 1
 stream = ExtResource("4_kogni")
 
 [node name="dashStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
-stream = ExtResource("5_fors6")
-volume_db = -12.427
+stream = ExtResource("5_jadj3")
+volume_db = -80.0
 
 [node name="damageStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
 stream = ExtResource("6_2n22x")
 
 [node name="slideStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
-stream = ExtResource("7_jadj3")
+stream = ExtResource("7_whqbp")
 volume_db = -10.874

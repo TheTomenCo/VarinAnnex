@@ -1,5 +1,5 @@
 extends Node3D
-@export var weapons: Array[PackedScene] = [load("res://scenes/pistol.tscn")]
+@export var weapons: Array = [load("res://scenes/pistol.tscn")]
 var selected = 0
 
 func _ready() -> void:

@@ -1,4 +1,3 @@
-#@tool
 extends CharacterBody3D
 @export var speed = 25.0
 const BOOST = 580.0
@@ -12,14 +11,11 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
-
 #start-up function
 func _ready():
-	#SPEED = get_meta("speed", SPEED)
-	#print(SPEED)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
-	fullHeal()
+	modifyHP(0)
 
 #camera rotation
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,7 +29,7 @@ func _physics_process(delta: float) -> void:
 #gravity innit
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		if position.y <= -10:
+		if position.y <= -50:
 			position = Vector3(-1, 1.1, 0)
 
 #jump action
@@ -114,3 +110,25 @@ func fullHeal():
 	HP = MaxHP
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+		
+func save_data():
+	var weapons = $CameraContainer/weaponHandler
+	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
+	"hp" : HP,
+	"selected_weapon" : weapons.selected,
+	"weapons" : weapons.weapons, 
+	"ammo" : weapons.get_child(weapons.selected).Ammo, 
+	"total_ammo" : weapons.get_child(weapons.selected).TotalAmmo}
+	
+func load_data(data):
+	var weapons = $CameraContainer/weaponHandler
+	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
+	HP = int(data["hp"])
+	weapons.weapons = data["weapons"]
+	weapons.selected = data["selected_weapon"]
+	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
+	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
+	if get_tree().root.get_node("Lab1/Hud"):
+			get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+			get_tree().root.get_node("Lab1/Hud").changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
+			get_tree().root.get_node("Lab1/Hud").changeTotalAmmo(int(data["total_ammo"]))

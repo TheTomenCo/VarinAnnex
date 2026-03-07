@@ -20,8 +20,7 @@ func shoot():
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
 	if get_tree().root.get_node("Lab1/Hud"):
-		if get_tree().root.get_node("Lab1/Hud"):
-			get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
 	
 func reload():	
 	if $ReloadTimer.is_stopped() and TotalAmmo > 0:
