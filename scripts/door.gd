@@ -24,7 +24,7 @@ func open():
 		anim_player.play("open")
 		
 func close():
-	print(close_delay.is_stopped())
+	#print(close_delay.is_stopped())
 	if opened == true and moving == false and close_delay.is_stopped():
 		print("closing")
 		moving = true
