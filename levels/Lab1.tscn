@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=15 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c35cg4jnlgr2r" path="res://scenes/pillar.tscn" id="8_j5mio"]
 [ext_resource type="PackedScene" uid="uid://bf4etqq7pkd28" path="res://scenes/trigger.tscn" id="9_7w6vf"]
 [ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/HUD.tscn" id="9_eyj1r"]
+[ext_resource type="PackedScene" uid="uid://bcob3f7o78rfi" path="res://scenes/wallLight.blend" id="10_psfkb"]
 [ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
 [ext_resource type="PackedScene" uid="uid://c4xnswesf0mms" path="res://scenes/shotgun.tscn" id="12_tfvxv"]
 [ext_resource type="PackedScene" uid="uid://0domy5467ke6" path="res://scenes/stairOrchestrator.tscn" id="13_17ebi"]
@@ -323,6 +324,215 @@ transform = Transform3D(0.01, 0, 0, 0, 9.031, 0, 0, 0, 0.48299992, -1.1429447, 0
 [node name="floor5" parent="corridors" instance=ExtResource("3_ysste")]
 transform = Transform3D(0.23099287, 0, 0, 0, 1, 0, 0, 0, 4.7595615, -1.25, 62.87, 6.9906373)
 
+[node name="corridorLightstotal" type="SpotLight3D" parent="corridors"]
+transform = Transform3D(0.009376676, -0.040108223, -3.8944519, -1.4782966, 0.0022258696, -0.027724069, 0.010242435, 0.35797906, -0.43616468, -1.3514122, 18.946404, -5.0415797)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="OmniLight3D" type="OmniLight3D" parent="corridors/corridorLightstotal"]
+transform = Transform3D(0.9999999, 2.9802322e-08, 1.4901161e-08, -2.9802322e-08, 0.99999994, 5.9604645e-08, -8.195639e-08, -5.9604645e-08, 0.99999994, 4.2552032, -17.911621, -2.3259888)
+light_energy = 0.8
+omni_range = 52.289
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="corridors/corridorLightstotal"]
+transform = Transform3D(1, 4.4703484e-08, 5.5879354e-08, -2.9802322e-08, 0.99999994, 1.0430813e-07, -8.568168e-08, -1.1920929e-07, 0.99999994, 59.86709, 233.86453, -46.25421)
+light_energy = 0.8
+omni_range = 52.289
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="corridors/corridorLightstotal"]
+transform = Transform3D(1, 4.4703484e-08, 5.9604645e-08, -2.9802322e-08, 0.99999994, 1.1920929e-07, -8.568168e-08, -1.1920929e-07, 0.99999994, 71.269485, 280.47107, -51.233482)
+light_energy = 0.8
+omni_range = 52.289
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="corridors/corridorLightstotal"]
+transform = Transform3D(1, 4.4703484e-08, 5.9604645e-08, -2.9802322e-08, 0.99999994, 1.1920929e-07, -8.568168e-08, -1.1920929e-07, 0.99999994, -3.2287521, -56.810455, 7.6131477)
+light_energy = 0.8
+omni_range = 52.289
+
+[node name="wallLight" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.2161313, -0.9007222, 0.37680724, 0.9615944, 0.2632438, 0.077703916, -0.16918203, 0.34554204, 0.92302555, 9.254871, -56.27133, 8.885567)
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight"]
+transform = Transform3D(-0.2161315, -0.97578275, -0.03370745, 0.90072525, -0.21259241, 0.37881586, -0.3768082, 0.05151302, 0.92485917, -0.038345337, 0.006210327, -0.40471697)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight2" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.19673714, 0.92409676, 0.3276239, -0.96704584, -0.23796932, 0.090509765, 0.16160452, -0.2990207, 0.940462, -9.330551, -51.015625, 15.433144)
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight2"]
+transform = Transform3D(-0.19673721, -0.9801264, 0.025444888, 0.924099, -0.19403818, -0.3292302, 0.32762435, -0.041258093, 0.94390786, 0.052124023, 0.32125854, -0.1889239)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight3" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.21613151, -0.9007224, 0.3768073, 0.9615949, 0.26324388, 0.07770375, -0.16918202, 0.345542, 0.9230258, 10.963665, -39.098526, -0.048614502)
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight3"]
+transform = Transform3D(-0.2753998, -0.96101135, 0.024736533, 0.90223217, -0.2495012, 0.3517512, -0.33186552, 0.1191904, 0.9357676, 0.0012359619, 0.006591797, -0.48812878)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight4" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.21613154, -0.9007224, 0.3768073, 0.96159494, 0.26324388, 0.07770374, -0.169182, 0.345542, 0.9230258, 14.820339, -21.668701, -3.0922108)
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight4"]
+transform = Transform3D(-0.21613161, -0.9615947, -0.16918193, 0.900725, -0.2632447, 0.34554234, -0.37680832, -0.077703625, 0.92302746, 0.006881714, 0.013664246, -0.4883368)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight5" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.21613154, -0.9007224, 0.3768073, 0.96159494, 0.26324388, 0.07770374, -0.169182, 0.345542, 0.9230258, 18.49855, -5.045433, -5.9949627)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight5"]
+transform = Transform3D(-0.21613161, -0.9615947, -0.16918187, 0.900725, -0.26324466, 0.34554237, -0.37680832, -0.077703565, 0.92302746, -0.083358765, 0.019996643, -0.4885229)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight6" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.1967372, 0.92409694, 0.3276239, -0.967046, -0.23796932, 0.090509765, 0.16160454, -0.29902074, 0.940462, -7.6879234, -33.802963, 6.2792263)
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight6"]
+transform = Transform3D(-0.24046515, -0.9698446, 0.03972803, 0.924073, -0.2412602, -0.29645368, 0.29709876, -0.034575067, 0.95422155, 0.07382202, 0.31568146, -0.28599548)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight7" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.23779601, -0.9095718, 0.3407831, 0.9550927, 0.28281564, 0.08839674, -0.17678195, 0.304459, 0.9359774, 67.05713, 214.60254, -44.620125)
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight7"]
+transform = Transform3D(-0.29931396, -0.9541531, -0.0014074291, 0.90731025, -0.2850757, 0.30906162, -0.2952937, 0.09122951, 0.95104057, 0.0038223267, 0.17516327, -0.39731407)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight8" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.23779604, -0.90957195, 0.34078312, 0.95509297, 0.2828157, 0.088396735, -0.17678198, 0.30445907, 0.9359776, 70.941574, 232.15782, -47.68563)
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight8"]
+transform = Transform3D(-0.26812205, -0.95881766, -0.09369046, 0.90848464, -0.28400525, 0.3065871, -0.32057008, -0.0029136485, 0.94721985, -0.08293152, 0.17964172, -0.38320923)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight9" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.23779605, -0.90957195, 0.34078312, 0.9550931, 0.2828157, 0.08839672, -0.17678198, 0.30445907, 0.9359776, 74.57471, 248.57733, -50.552803)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight9"]
+transform = Transform3D(-0.26930824, -0.95880884, -0.09031635, 0.90844107, -0.284049, 0.30667567, -0.31969804, 0.0005431479, 0.9475188, -0.07688904, 0.18650818, -0.38669538)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight10" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(0.23779619, -0.90957195, 0.34078312, 0.95509344, 0.2828157, 0.08839672, -0.17678207, 0.30445907, 0.9359776, 82.33033, 273.80402, -48.787712)
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight10"]
+transform = Transform3D(-0.25355884, -0.95794654, -0.1343284, 0.9090126, -0.28345037, 0.30553395, -0.33076122, -0.04463545, 0.9426579, -0.14186096, 0.19924164, -0.38319016)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight11" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.2126208, 0.9068487, 0.36389562, -0.9625945, -0.2583988, 0.08151033, 0.16794772, -0.3329527, 0.9278673, 48.248184, 219.9216, -37.993805)
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight11"]
+transform = Transform3D(-0.25264058, -0.9658795, 0.056986734, 0.9072127, -0.25694725, -0.33307892, 0.3363571, -0.032450072, 0.9411745, 0.07123566, 0.42098236, -0.10286379)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight12" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.18561724, 0.9127285, 0.3639704, -0.9697733, -0.22986671, 0.081873514, 0.15839294, -0.33777118, 0.9278062, 52.103363, 237.48506, -41.04899)
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight12"]
+transform = Transform3D(-0.21054433, -0.97338194, 0.09053341, 0.91368115, -0.22886944, -0.33586386, 0.34764454, 0.012004546, 0.9375485, 0.16769409, 0.44112396, -0.09315753)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight13" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.20732035, 0.9080689, 0.36391118, -0.96407455, -0.25280026, 0.08158159, 0.16607869, -0.33392322, 0.927855, 55.774536, 253.89378, -43.929558)
+
+[node name="right" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight13"]
+transform = Transform3D(-0.20731926, -0.9640711, 0.1660779, 0.90806717, -0.25280023, -0.33392274, 0.36391035, 0.081581585, 0.9278534, 0.076553345, 0.3988266, -0.23055863)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight14" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.20913559, 0.9076546, 0.36390567, -0.9635715, -0.25471786, 0.08155727, 0.1667191, -0.33359215, 0.9278591, 63.635788, 279.09064, -42.201683)
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight14"]
+transform = Transform3D(-0.25592345, -0.96602935, 0.035883076, 0.90826875, -0.2529991, -0.3332232, 0.3309824, -0.052688196, 0.9421642, 0.034606934, 0.26947784, -0.2896886)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
+[node name="wallLight15" parent="corridors/corridorLightstotal" instance=ExtResource("10_psfkb")]
+transform = Transform3D(-0.22351706, 0.89238906, 0.3920231, -0.95944333, -0.2723215, 0.07286496, 0.17178006, -0.35983732, 0.9170653, -3.7401505, -16.436401, 3.282154)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="corridors/corridorLightstotal/wallLight15"]
+transform = Transform3D(-0.26105627, -0.96292436, 0.06801841, 0.8930833, -0.2676646, -0.36160478, 0.36640412, -0.033653084, 0.9298471, 0.041366577, 0.2513733, -0.39835536)
+light_energy = 4.958
+light_indirect_energy = 6.592
+light_size = 1.0
+spot_range = 34.355
+spot_attenuation = 0.79
+spot_angle = 57.99
+
 [node name="Hud" parent="." instance=ExtResource("9_eyj1r")]
 
 [node name="Pickup" parent="." instance=ExtResource("11_1igf4")]
@@ -344,7 +554,6 @@ transform = Transform3D(196.84297, 0, 0, 0, 0.23788866, 0, 0, 0, 139.59789, 84.5
 
 [node name="StairOrchestrator2" parent="leftFlank" instance=ExtResource("13_17ebi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.22774, -10.881, -168.29)
-steepness = 0.25
 width = 21
 steps = 22
 
@@ -368,6 +577,11 @@ transform = Transform3D(1, 0, 0, 0, 3.7422934, 0, 0, 0, 17.6039, -14.087662, -10
 
 [node name="wall7" parent="leftFlank" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(-4.3711353e-08, 0, 25.025734, 0, 3.6940162, 0, -0.99999917, 0, -1.0939094e-06, 83.95302, -10.664946, -306.48984)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="leftFlank"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.89713, -7.6293945e-06, -237.89775)
+light_energy = 4.261
+omni_range = 174.627
 
 [node name="leftFlank2" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 168.714, 0, 25.99)
@@ -400,6 +614,11 @@ transform = Transform3D(1, 0, 0, 0, 3.7422934, 0, 0, 0, 17.6039, -14.087662, -10
 
 [node name="wall7" parent="leftFlank2" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(-4.3711353e-08, 0, 25.025734, 0, 3.6940162, 0, -0.99999917, 0, -1.0939094e-06, 83.95302, -10.664946, -306.48984)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="leftFlank2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.31815, -7.6293945e-06, -237.8977)
+light_energy = 4.261
+omni_range = 174.627
 
 [node name="StairOrchestrator" parent="." instance=ExtResource("13_17ebi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.68719, -13.863653, 7.2221713)

@@ -1,5 +1,12 @@
 extends Node3D
 
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print(1)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
 		Save()
@@ -7,14 +14,10 @@ func _process(delta: float) -> void:
 		Load()
 	
 func Save():
-	var save_data = {}
-	save_data.merge({"player" : $player.get_child(0).save_data()})
-	var file = FileAccess.open("user://save.json", FileAccess.WRITE)
-	file.store_string(JSON.stringify(save_data))
+	var packedScene = PackedScene.new()
+	packedScene.pack(self)
+	ResourceSaver.save(packedScene, "res://save.tscn")
 
 func Load():
-	if FileAccess.file_exists("user://save.json"):
-		var file = FileAccess.open("user://save.json", FileAccess.READ)
-		var data = JSON.parse_string(file.get_as_text())
-		
-		$player.get_child(0).load_data(data["player"])
+	if FileAccess.file_exists("res://save.tscn"):
+		get_tree().change_scene_to_file("res://save.tscn")
