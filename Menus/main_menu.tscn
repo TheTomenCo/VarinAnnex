@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo7uoegqx0s4s"]
 
 [ext_resource type="Script" uid="uid://dhsw3q3hk8arh" path="res://scripts/main_menu.gd" id="1_jf8mj"]
-[ext_resource type="Texture2D" uid="uid://br1slct8755u1" path="res://artAssets/logos/VarinOne.png" id="2_2k0p2"]
+[ext_resource type="VideoStream" uid="uid://b3pq70x62pju4" path="res://artAssets/VarinOne.ogv" id="2_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://artAssets/buttons/STARTGAMEBase.png" id="3_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://artAssets/buttons/STARTGAMEsELECT.png" id="4_y501u"]
 [ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://artAssets/buttons/OPTIONSBase.png" id="5_uayf2"]
@@ -12,10 +12,12 @@
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_jf8mj")
 
-[node name="VarinOne" type="Sprite2D" parent="."]
-position = Vector2(565.25006, 333.49997)
-scale = Vector2(0.6091146, 0.6101852)
-texture = ExtResource("2_2k0p2")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_2k0p2")
+autoplay = true
+loop = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

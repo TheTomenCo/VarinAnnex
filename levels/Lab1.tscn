@@ -313,7 +313,7 @@ transform = Transform3D(-4.5059148e-10, 0, 0.1001465, 0, 8.911812, 0, -0.0481832
 transform = Transform3D(-4.5059148e-10, 0, 0.1001465, 0, 8.911812, 0, -0.048183206, 0, -2.0461513e-08, 0.10792637, 0.9082163, -0.49073496)
 
 [node name="floor4" parent="corridors" instance=ExtResource("3_ysste")]
-transform = Transform3D(0.78536296, 0, 0, 0, 1, 0, 0, 0, 1.0234693, 0.11328292, 63.345554, 0.016361222)
+transform = Transform3D(0.78536296, 0, 0, 0, 1, 0, 0, 0, 1.0234693, 0.113, 62.896, 0.016)
 
 [node name="wall5" parent="corridors" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(0.010308335, 0, 0, 0, 8.9578, 0, 0, 0, 0.4803027, -1.3576996, 0.9082163, 6.4703727)
