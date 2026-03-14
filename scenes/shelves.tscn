@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7543cye2rwg4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bephpeir23ibq" path="res://meshes/shelves.obj" id="1_wx7st"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r805t"]
+size = Vector3(1, 10.947693, 1)
+
+[node name="shelves" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_wx7st")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2.4553828, 0, 0, 0, 1, 0, 0, 0, 43.31984, 0.05586052, 5.426422, 0)
+shape = SubResource("BoxShape3D_r805t")
+debug_color = Color(0.9714125, 0, 0.44485822, 1)

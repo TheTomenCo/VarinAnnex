@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4j8l5g445gku"]
+
+[ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_6chve"]
+[ext_resource type="PackedScene" uid="uid://sadimw2101bb" path="res://scenes/boxes.tscn" id="2_vy815"]
+
+[node name="Rack" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_6chve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8354177, 0, 0)
+
+[node name="frame" type="Node3D" parent="."]
+
+[node name="vertical bars" type="Node3D" parent="frame"]
+
+[node name="left" type="Node3D" parent="frame/vertical bars"]
+
+[node name="bar" parent="frame/vertical bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 15, 0, 0, 0, 0.2, 0, 7.5, 2.25)
+
+[node name="bar2" parent="frame/vertical bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 15, 0, 0, 0, 0.2, 0, 7.5, 0.25)
+
+[node name="right" type="Node3D" parent="frame/vertical bars"]
+
+[node name="bar" parent="frame/vertical bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 15, 0, 0, 0, 0.2, 0, 7.5, -0.25)
+
+[node name="bar2" parent="frame/vertical bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 15, 0, 0, 0, 0.2, 0, 7.5, -2.25)
+
+[node name="horizontal bars" type="Node3D" parent="frame"]
+
+[node name="left" type="Node3D" parent="frame/horizontal bars"]
+
+[node name="bar" parent="frame/horizontal bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 3, 1.25)
+
+[node name="bar2" parent="frame/horizontal bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 6, 1.25)
+
+[node name="bar3" parent="frame/horizontal bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 9, 1.25)
+
+[node name="bar4" parent="frame/horizontal bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 12, 1.25)
+
+[node name="bar5" parent="frame/horizontal bars/left" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 0.1, 0, 0, 0, 2.2, 0, 15, 1.25)
+
+[node name="right" type="Node3D" parent="frame/horizontal bars"]
+
+[node name="bar" parent="frame/horizontal bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 3, -1.25)
+
+[node name="bar2" parent="frame/horizontal bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 6, -1.25)
+
+[node name="bar3" parent="frame/horizontal bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 9, -1.25)
+
+[node name="bar4" parent="frame/horizontal bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 12, -1.25)
+
+[node name="bar5" parent="frame/horizontal bars/right" instance=ExtResource("2_vy815")]
+transform = Transform3D(0.2, 0, 0, 0, 0.1, 0, 0, 0, 2.2, 0, 15, -1.25)
