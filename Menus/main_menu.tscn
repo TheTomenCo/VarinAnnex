@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo7uoegqx0s4s"]
 
 [ext_resource type="Script" uid="uid://dhsw3q3hk8arh" path="res://scripts/main_menu.gd" id="1_jf8mj"]
-[ext_resource type="Texture2D" uid="uid://b7ojm66mekety" path="res://artAssets/logos/VarinStamp.png" id="2_p3jrs"]
+[ext_resource type="VideoStream" uid="uid://b3pq70x62pju4" path="res://artAssets/VarinOne.ogv" id="2_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://artAssets/buttons/STARTGAMEBase.png" id="3_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://artAssets/buttons/STARTGAMEsELECT.png" id="4_y501u"]
 [ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://artAssets/buttons/OPTIONSBase.png" id="5_uayf2"]
@@ -12,10 +12,12 @@
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_jf8mj")
 
-[node name="VarinStamp" type="Sprite2D" parent="."]
-position = Vector2(568.00006, 277)
-scale = Vector2(0.47721776, 0.36899933)
-texture = ExtResource("2_p3jrs")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_2k0p2")
+autoplay = true
+loop = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -25,31 +27,31 @@ offset_bottom = 40.0
 
 [node name="start" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 123.99999
-offset_top = 550.0
-offset_right = 909.0
-offset_bottom = 779.0
+offset_left = 458.0
+offset_top = 524.0
+offset_right = 1243.0
+offset_bottom = 753.0
 scale = Vector2(0.31797883, 0.3955383)
 texture_normal = ExtResource("3_2k0p2")
 texture_hover = ExtResource("4_y501u")
 
 [node name="settings" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 550.0
-offset_right = 1259.0
-offset_bottom = 779.0
+offset_left = 56.0
+offset_top = 218.00006
+offset_right = 840.0
+offset_bottom = 447.00006
 scale = Vector2(0.30218434, 0.39316532)
 texture_normal = ExtResource("5_uayf2")
 texture_hover = ExtResource("6_55uyf")
 
 [node name="exit" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 793.00006
-offset_top = 547.99994
-offset_right = 1577.0
-offset_bottom = 776.99994
-scale = Vector2(0.3294231, 0.403765)
+offset_left = 854.99994
+offset_top = 228.0
+offset_right = 1639.0
+offset_bottom = 457.0
+scale = Vector2(0.33010194, 0.39781943)
 texture_normal = ExtResource("7_62ju1")
 texture_hover = ExtResource("8_lx30u")
 

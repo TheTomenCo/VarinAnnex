@@ -1,26 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://by2rfnapqdr0h"]
+[gd_scene load_steps=6 format=3 uid="uid://by2rfnapqdr0h"]
 
 [ext_resource type="PackedScene" uid="uid://4jx8wrpsrhbr" path="res://scenes/floor.tscn" id="1_7kaql"]
-[ext_resource type="Script" path="res://scripts/warehouse.gd" id="1_d3jqc"]
+[ext_resource type="Script" uid="uid://dvpj8q1g5i803" path="res://scripts/warehouse.gd" id="1_d3jqc"]
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="3_d3jqc"]
+[ext_resource type="PackedScene" uid="uid://b7543cye2rwg4" path="res://scenes/shelves.tscn" id="4_r805t"]
 
 [sub_resource type="Environment" id="Environment_d3jqc"]
 
 [node name="Warehouse" type="Node3D"]
 script = ExtResource("1_d3jqc")
 
-[node name="floor" parent="." instance=ExtResource("1_7kaql")]
-transform = Transform3D(110.83358, 0, 0, 0, 0.23788866, 0, 0, 0, 100.05013, 0, 0, 0)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d3jqc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.58375376, 0.8119307, 0, -0.8119307, 0.58375376, 0, 9.777677, 8.711962)
+transform = Transform3D(1, 0, 0, 0, 0.5837538, 0.8119308, 0, -0.8119308, 0.5837538, 0, 9.777677, 8.711962)
 light_energy = 2.485
-
-[node name="player" parent="." instance=ExtResource("3_d3jqc")]
-transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 2, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5837538, 0.8119308, 0, -0.8119308, 0.5837538, 0, 7.9810724, 7.457816)
@@ -28,3 +23,13 @@ visible = false
 light_energy = 16.0
 light_indirect_energy = 1.33
 omni_range = 40.816
+
+[node name="FogVolume" type="FogVolume" parent="."]
+
+[node name="floor" parent="." instance=ExtResource("1_7kaql")]
+transform = Transform3D(500, 0, 0, 0, 0.5, 0, 0, 0, 500, 0, -0.5, 0)
+
+[node name="player" parent="." instance=ExtResource("3_d3jqc")]
+transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, -10.578937, 2, 0)
+
+[node name="shelves" parent="." instance=ExtResource("4_r805t")]
