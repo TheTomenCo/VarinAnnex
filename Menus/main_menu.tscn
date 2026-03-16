@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo7uoegqx0s4s"]
 
 [ext_resource type="Script" uid="uid://dhsw3q3hk8arh" path="res://scripts/main_menu.gd" id="1_jf8mj"]
-[ext_resource type="VideoStream" uid="uid://b3pq70x62pju4" path="res://artAssets/VarinOne.ogv" id="2_2k0p2"]
+[ext_resource type="VideoStream" uid="uid://qd0xo45hxh0" path="res://artAssets/VarinOne (3).ogv" id="2_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://artAssets/buttons/STARTGAMEBase.png" id="3_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://artAssets/buttons/STARTGAMEsELECT.png" id="4_y501u"]
 [ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://artAssets/buttons/OPTIONSBase.png" id="5_uayf2"]
@@ -12,7 +12,7 @@
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_jf8mj")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="mainMenuAnimationPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 stream = ExtResource("2_2k0p2")
@@ -27,10 +27,10 @@ offset_bottom = 40.0
 
 [node name="start" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 524.0
-offset_right = 1243.0
-offset_bottom = 753.0
+offset_left = 848.0
+offset_top = 895.0
+offset_right = 1633.0
+offset_bottom = 1124.0
 scale = Vector2(0.31797883, 0.3955383)
 texture_normal = ExtResource("3_2k0p2")
 texture_hover = ExtResource("4_y501u")
@@ -47,10 +47,10 @@ texture_hover = ExtResource("6_55uyf")
 
 [node name="exit" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 854.99994
-offset_top = 228.0
-offset_right = 1639.0
-offset_bottom = 457.0
+offset_left = 1592.0
+offset_top = 226.0
+offset_right = 2376.0
+offset_bottom = 455.0
 scale = Vector2(0.33010194, 0.39781943)
 texture_normal = ExtResource("7_62ju1")
 texture_hover = ExtResource("8_lx30u")

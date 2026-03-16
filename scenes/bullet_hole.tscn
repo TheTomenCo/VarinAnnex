@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw7emlchlsunk"]
+
+[ext_resource type="Texture2D" uid="uid://d33hedl3rfnpx" path="res://scenes/textures/bullet_hole_1.png" id="1_75sdo"]
+[ext_resource type="Script" uid="uid://chkoi0mx1c4il" path="res://scripts/bullet_hole.gd" id="1_bqmt7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqmt7"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_75sdo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ob0a0"]
+material = SubResource("StandardMaterial3D_bqmt7")
+
+[node name="BulletHole" type="Node3D"]
+script = ExtResource("1_bqmt7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.075, 0, 0, 0, -3.2783543e-09, -0.075, 0, 0.075, -3.2783543e-09, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ob0a0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
