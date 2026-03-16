@@ -8,12 +8,15 @@ func _ready() -> void:
 	Damage = 2
 	Cooldown = 0.5
 	ReloadTime = 0.5
+	maxRange = 10
+	reloadTimer = createReloadTimer()
 	$CooldownTimer.wait_time = Cooldown
-	$ReloadTimer.wait_time = ReloadTime
+	reloadTimer.wait_time = ReloadTime
+	$RayCast3D.scale.y = maxRange
 	modifyAmmo(0)
 
 func shoot():
-	if $CooldownTimer.is_stopped() and $ReloadTimer.is_stopped():
+	if $CooldownTimer.is_stopped() and reloadTimer.is_stopped():
 		if Ammo > 0:
 			$CooldownTimer.start()
 			Ammo -= 1
@@ -33,7 +36,6 @@ func shoot():
 						hits += 1
 						collider = child
 					if child != $RayCast3D:
-						pass
 						remove_child(child)
 			if collider:
 				print(hits, " pellets hit ", collider.get_collider().get_parent().name, " at ", collider.get_collision_point(), " and dealt a total of ", Damage*hits, " damage")

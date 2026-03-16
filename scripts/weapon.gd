@@ -5,15 +5,19 @@ var TotalAmmo = 100 #Extra magazines
 var Damage = 10
 var Cooldown = 0.5
 var ReloadTime = 0.5
+var maxRange = 32
 var bulletHole = preload("res://scenes/bullet_hole.tscn")
+var reloadTimer
 
 func _ready() -> void:
+	reloadTimer = createReloadTimer()
 	$CooldownTimer.wait_time = Cooldown
-	$ReloadTimer.wait_time = ReloadTime
+	reloadTimer.wait_time = ReloadTime
+	$RayCast3D.scale.y = maxRange
 	modifyAmmo(0)
 
 func shoot():
-	if $CooldownTimer.is_stopped() and $ReloadTimer.is_stopped():
+	if $CooldownTimer.is_stopped() and reloadTimer.is_stopped():
 		if Ammo > 0:
 			$CooldownTimer.start()
 			Ammo -= 1
@@ -26,9 +30,9 @@ func shoot():
 			get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
 	
 func reload():	
-	if $ReloadTimer.is_stopped() and TotalAmmo > 0:
+	if reloadTimer.is_stopped() and TotalAmmo > 0:
 		print("Reloading")
-		$ReloadTimer.start()
+		reloadTimer.start()
 		if get_tree().root.get_node("Lab1/Hud"):
 			get_tree().root.get_node("Lab1/Hud").changeAmmo(0, MaxAmmo)
 	
@@ -50,9 +54,16 @@ func createBulletHole(raycast):
 	hole.rotation.z += randf_range(-PI, PI)
 	get_tree().root.get_node("Lab1").add_child(hole)
 
-func reloadTimer() -> void:
+func _on_timer_timeout() -> void:
 	var tempAmmo = TotalAmmo
 	modifyAmmo(Ammo - MaxAmmo)
 	Ammo = clamp(0, Ammo + tempAmmo, MaxAmmo)
 	if get_tree().root.get_node("Lab1/Hud"):
 		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+
+func createReloadTimer():
+	reloadTimer = Timer.new()
+	reloadTimer.one_shot = true
+	reloadTimer.timeout.connect(_on_timer_timeout)
+	add_child(reloadTimer)
+	return reloadTimer

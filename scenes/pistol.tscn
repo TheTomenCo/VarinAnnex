@@ -3,5 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://cthe0bd35ymt5" path="res://scenes/Weapon.tscn" id="1_igbvm"]
 
 [node name="Weapon" instance=ExtResource("1_igbvm")]
-
-[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

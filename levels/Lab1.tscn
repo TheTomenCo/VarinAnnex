@@ -172,7 +172,7 @@ transform = Transform3D(0.014570251, 0, 0, 0, 4.203647, 0, 0, 0, 0.1666055, -1.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009025574, 2.0980835e-05, -8.592245)
 
 [node name="upperOuterWall10" parent="mainFloor/upperOuterWall" instance=ExtResource("2_qpwx5")]
-transform = Transform3D(1, 0, 0, 0, 0.7213427, 0, 0, 0, 0.09151952, 0.009025574, 1.8708837, -4.3011746)
+transform = Transform3D(1, 0, 0, 0, 0.7213427, 0, 0, 0, 0.09151952, 0.009025574, 2.0043771, -4.3011746)
 
 [node name="upperOuterWall3" parent="mainFloor/upperOuterWall" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(1, 0, 0, 0, 1.129454, 0, 0, 0, 2.1051035, 0.009033203, 6.776326, -4.365077)
