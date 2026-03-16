@@ -21,8 +21,11 @@ func shoot():
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
 				var hole = bulletHole.instantiate()
+				var scalingFactor = randf_range(0.8, 1.1)
+				hole.get_child(0).scale = hole.get_child(0).scale*scalingFactor
 				hole.position = $RayCast3D.get_collision_point() + $RayCast3D.get_collision_normal()/100
-				hole.rotation = $RayCast3D.get_collision_normal()
+				hole.basis = hole.basis.looking_at($RayCast3D.get_collision_normal(), Vector3.UP)
+				hole.rotation.z += randf_range(-PI, PI)
 				get_tree().root.get_node("Lab1").add_child(hole)
 	if get_tree().root.get_node("Lab1/Hud"):
 		if get_tree().root.get_node("Lab1/Hud"):
