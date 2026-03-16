@@ -1,17 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4xnswesf0mms"]
+[gd_scene load_steps=3 format=3 uid="uid://c4xnswesf0mms"]
 
-[ext_resource type="Script" uid="uid://ddehun2cnkh8d" path="res://scripts/shotgun.gd" id="1_voyse"]
+[ext_resource type="PackedScene" uid="uid://cthe0bd35ymt5" path="res://scenes/Weapon.tscn" id="1_voyse"]
+[ext_resource type="Script" uid="uid://ddehun2cnkh8d" path="res://scripts/shotgun.gd" id="2_gnj2g"]
 
-[node name="Shotgun" type="Node3D"]
-script = ExtResource("1_voyse")
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -8.742278e-07, -1, 0, 20, -4.371139e-08, 0, 0, 0)
-
-[node name="ReloadTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="CooldownTimer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]
+[node name="Weapon" instance=ExtResource("1_voyse")]
+script = ExtResource("2_gnj2g")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="2_fioyg"]
-[ext_resource type="PackedScene" uid="uid://cyows3brk4xbq" path="res://scenes/pistol.tscn" id="3_bgq5m"]
+[ext_resource type="PackedScene" uid="uid://bfg0j4ilps8lh" path="res://scenes/pistol.tscn" id="3_bgq5m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 

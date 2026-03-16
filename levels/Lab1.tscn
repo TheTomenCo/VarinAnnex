@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=16 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://l0np81ivq3dg" path="res://scenes/PC.tscn" id="1_25qeb"]
 [ext_resource type="Script" uid="uid://c57ip1nxwf86i" path="res://scripts/lab_1.gd" id="1_qpwx5"]
@@ -12,8 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/HUD.tscn" id="9_eyj1r"]
 [ext_resource type="PackedScene" uid="uid://bcob3f7o78rfi" path="res://scenes/wallLight.blend" id="10_psfkb"]
 [ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
-[ext_resource type="PackedScene" uid="uid://c4xnswesf0mms" path="res://scenes/shotgun.tscn" id="12_tfvxv"]
 [ext_resource type="PackedScene" uid="uid://0domy5467ke6" path="res://scenes/stairOrchestrator.tscn" id="13_17ebi"]
+[ext_resource type="Script" uid="uid://ddehun2cnkh8d" path="res://scripts/shotgun.gd" id="13_psfkb"]
+
+[sub_resource type="PackedScene" id="PackedScene_4o8c2"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(2, 0, 10, 9, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Shotgun", "script", "Node3D", "RayCast3D", "transform", "ReloadTimer", "one_shot", "Timer", "CooldownTimer", "_on_ReloadTimer_timeout", "timeout"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 3, 3, -1, 1, 4, 1, 0, 0, 0, 7, 5, -1, 1, 6, 2, 0, 0, 0, 7, 8, -1, 1, 6, 2, 0),
+"variants": [ExtResource("13_psfkb"), Transform3D(1, 0, 0, 0, -8.742278e-07, -1, 0, 20, -4.371139e-08, 0, 0, 0), true],
+"version": 3
+}
 
 [node name="Lab1" type="Node3D"]
 script = ExtResource("1_qpwx5")
@@ -545,7 +558,7 @@ type = 0
 [node name="Pickup3" parent="." instance=ExtResource("11_1igf4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -0.5517349)
 type = 2
-WeaponScene = ExtResource("12_tfvxv")
+WeaponScene = SubResource("PackedScene_4o8c2")
 
 [node name="leftFlank" type="Node3D" parent="."]
 
