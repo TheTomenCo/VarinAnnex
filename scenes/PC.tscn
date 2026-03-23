@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://l0np81ivq3dg"]
+[gd_scene load_steps=7 format=3 uid="uid://l0np81ivq3dg"]
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
 [ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="2_fioyg"]
 [ext_resource type="PackedScene" uid="uid://bfg0j4ilps8lh" path="res://scenes/pistol.tscn" id="3_bgq5m"]
+[ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="4_kogni"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
 
@@ -44,6 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)
 weapons = Array[PackedScene]([ExtResource("3_bgq5m")])
 
 [node name="doorHandler" type="Node3D" parent="AbsolutePlayer/CameraContainer"]
+script = ExtResource("4_kogni")
 
 [node name="RayCast3D" type="RayCast3D" parent="AbsolutePlayer/CameraContainer/doorHandler"]
 transform = Transform3D(1, 0, 0, 0, -8.742278e-08, -1, 0, 2, -4.371139e-08, 0, 0, 0)
