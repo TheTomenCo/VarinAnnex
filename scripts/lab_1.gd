@@ -21,3 +21,10 @@ func Save():
 func Load():
 	if FileAccess.file_exists("res://save.tscn"):
 		get_tree().change_scene_to_file("res://save.tscn")
+
+
+#plan for SlaughterRoom
+#for each instance of an enemy in the scene, add to a counter
+#if the counter != 0, the the hitboxes on the garage doors stay
+#if the counter == 0 then they remove the hitbox and plays an animation to open the door.
+#opens all the doors but they can only complete one of the puzzles with the EQ they have at the time which blocks them just skipping to the boss

@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://como2j8l1yvey" path="res://artAssets/buttons/PauseQUITSelected.png" id="7_o46v2"]
 
 [node name="pauseMenu" type="Node2D"]
+position = Vector2(193, 99)
+scale = Vector2(1.35, 1.35)
 script = ExtResource("1_iptcy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -27,31 +29,31 @@ offset_bottom = 40.0
 
 [node name="Resume" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 135.0
-offset_right = 915.0
-offset_bottom = 364.0
-scale = Vector2(0.3365696, 0.37693888)
+offset_left = 64.00002
+offset_top = 20.0
+offset_right = 849.0
+offset_bottom = 249.0
+scale = Vector2(0.222, 0.248)
 texture_normal = ExtResource("2_8dklf")
 texture_hover = ExtResource("3_hod66")
 
 [node name="Settings" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
-offset_left = 427.0
-offset_top = 430.00003
-offset_right = 1212.0
-offset_bottom = 659.0
+offset_left = 439.99997
+offset_top = 513.3333
+offset_right = 1225.0
+offset_bottom = 742.3333
 scale = Vector2(0.36871508, 0.39265537)
 texture_normal = ExtResource("4_xhotf")
 texture_hover = ExtResource("5_0ik23")
 
 [node name="Quit" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
-offset_left = 752.00006
-offset_top = 135.0
-offset_right = 1537.0
-offset_bottom = 364.0
-scale = Vector2(0.35947534, 0.39326954)
+offset_left = 907.4074
+offset_top = 23.703701
+offset_right = 1692.4075
+offset_bottom = 252.7037
+scale = Vector2(0.234, 0.256)
 texture_normal = ExtResource("6_bswfk")
 texture_hover = ExtResource("7_o46v2")
 
