@@ -11,6 +11,8 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
+
+
 #start-up function
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -97,7 +99,8 @@ func _physics_process(delta: float) -> void:
 			#print_debug("cooldown reset")
 			pass
 	move_and_slide()
-	
+
+
 func modifyHP(HPAmount):
 	if HP + HPAmount >= 0 and $invincibilityTimer.is_stopped():
 		HP += HPAmount
@@ -105,6 +108,7 @@ func modifyHP(HPAmount):
 			$invincibilityTimer.start()
 		if get_tree().root.get_node("Lab1/Hud"):
 			get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+
 
 func fullHeal():
 	HP = MaxHP

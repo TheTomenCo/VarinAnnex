@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cylrjynqhugy4"]
 
-[ext_resource type="Script" uid="uid://cpxdaudp15hwm" path="res://scripts/pause_menu.gd" id="1_iptcy"]
+[ext_resource type="Script" uid="uid://befl635cq813j" path="res://scripts/pause_menu.gd" id="1_iptcy"]
 [ext_resource type="Texture2D" uid="uid://ct377jj5e2d07" path="res://artAssets/buttons/RESUMEBase.png" id="2_8dklf"]
 [ext_resource type="Texture2D" uid="uid://cf8l61yu4emgc" path="res://artAssets/buttons/RESUMESelected.png" id="3_hod66"]
 [ext_resource type="Texture2D" uid="uid://chlus53ihy51p" path="res://artAssets/buttons/SETTINGSBase.png" id="4_xhotf"]
@@ -8,24 +8,31 @@
 [ext_resource type="Texture2D" uid="uid://d3x7bvw7vsk8y" path="res://artAssets/buttons/PauseQUITBase.png" id="6_bswfk"]
 [ext_resource type="Texture2D" uid="uid://como2j8l1yvey" path="res://artAssets/buttons/PauseQUITSelected.png" id="7_o46v2"]
 
-[node name="pauseMenu" type="Node2D"]
-position = Vector2(193, 99)
-scale = Vector2(1.35, 1.35)
+[node name="pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_iptcy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 31.0
-offset_top = -1.0
-offset_right = 71.0
-offset_bottom = 39.0
-scale = Vector2(27.171854, 16.165464)
+layout_mode = 0
+offset_left = 247.00002
+offset_top = 56.0
+offset_right = 287.00003
+offset_bottom = 96.0
+scale = Vector2(36.446312, 23.57676)
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.27450982)
 
 [node name="buttonManager" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 224.0
+offset_top = 68.0
+offset_right = 264.0
+offset_bottom = 108.0
 
 [node name="Resume" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
@@ -39,20 +46,20 @@ texture_hover = ExtResource("3_hod66")
 
 [node name="Settings" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
-offset_left = 439.99997
-offset_top = 513.3333
-offset_right = 1225.0
-offset_bottom = 742.3333
+offset_left = 629.0
+offset_top = 776.0
+offset_right = 1414.0
+offset_bottom = 1005.0
 scale = Vector2(0.36871508, 0.39265537)
 texture_normal = ExtResource("4_xhotf")
 texture_hover = ExtResource("5_0ik23")
 
 [node name="Quit" type="TextureButton" parent="buttonManager"]
 layout_mode = 0
-offset_left = 907.4074
-offset_top = 23.703701
-offset_right = 1692.4075
-offset_bottom = 252.7037
+offset_left = 1253.0
+offset_top = 23.999996
+offset_right = 2038.0
+offset_bottom = 253.0
 scale = Vector2(0.234, 0.256)
 texture_normal = ExtResource("6_bswfk")
 texture_hover = ExtResource("7_o46v2")
