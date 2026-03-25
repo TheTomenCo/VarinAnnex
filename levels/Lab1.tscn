@@ -624,10 +624,10 @@ transform = Transform3D(197.79233, 0, 0, 0, 0.23788866, 0, 0, 0, 19.86268, 84.66
 transform = Transform3D(0.10631571, 0, 0.015569211, 0, 1, 0, -0.16614619, 0, 0.98790836, -0.105229706, -0.0006713867, -1.8109283)
 
 [node name="floor3" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
-transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8451685, -0.32566175, -0.0006713867, -3.3218489)
+transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8451685, -0.2490078, -0.0006713867, -2.831541)
 
 [node name="floor5" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
-transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8451685, -0.3078031, -0.0006713867, -5.8197823)
+transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8451685, -0.36361903, -0.0006713867, -4.036393)
 
 [node name="floor6" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
 transform = Transform3D(0.011861846, 0, 0, 0, 1, 0, 0, 0, 0.21311228, -0.4989987, -0.0006713867, -6.370221)
@@ -664,6 +664,12 @@ transform = Transform3D(0.1700811, 0, 0, 0, 1.0000001, 0, 0, 0, 1.7790848, 0.422
 
 [node name="floor14" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
 transform = Transform3D(0.11664258, 0, 0.13002534, 0, 1.0000002, 0, -1.2326237, 0, 1.2201065, 0.36658618, -0.0006713867, -0.8914032)
+
+[node name="floor15" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
+transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8451685, -0.27455568, -0.0006713867, -5.2671537)
+
+[node name="floor16" parent="leftFlank/baseLevel" instance=ExtResource("3_ysste")]
+transform = Transform3D(0.0021543682, 0, -0.04919928, 0, 0.6264121, 0, 0.5554119, 0, 0.018923765, 0.16698667, -0.000667572, -5.7258844)
 
 [node name="leftFlank2" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 168.714, 0, 25.99)
