@@ -8,8 +8,10 @@ var ReloadTime = 0.5
 var maxRange = 32
 var bulletHole = preload("res://scenes/weapons/bullet_hole.tscn")
 var reloadTimer
+var HUD
 
 func _ready() -> void:
+	HUD = get_parent().get_parent().get_parent().get_node("Hud")
 	reloadTimer = createReloadTimer()
 	$CooldownTimer.wait_time = Cooldown
 	reloadTimer.wait_time = ReloadTime
@@ -25,25 +27,24 @@ func shoot():
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
 				createBulletHole($RayCast3D)
-	if get_tree().root.get_node("Lab1/Hud"):
-		if get_tree().root.get_node("Lab1/Hud"):
-			get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+	if HUD:
+		HUD.changeAmmo(Ammo, MaxAmmo)
 	
 func reload():
 	if reloadTimer.is_stopped() and TotalAmmo > 0:
 		print("Reloading")
 		reloadTimer.start()
-		if get_tree().root.get_node("Lab1/Hud"):
-			get_tree().root.get_node("Lab1/Hud").changeAmmo(0, MaxAmmo)
+		if HUD:
+			HUD.changeAmmo(0, MaxAmmo)
 	
 func modifyAmmo(AmmoAmount):
 	if TotalAmmo + AmmoAmount >= 0:
 		TotalAmmo += AmmoAmount
 	else:
 		TotalAmmo = 0
-	if get_tree().root.get_node("Lab1/Hud"):
-		get_tree().root.get_node("Lab1/Hud").changeTotalAmmo(TotalAmmo)
-		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+	if HUD:
+		HUD.changeTotalAmmo(TotalAmmo)
+		HUD.changeAmmo(Ammo, MaxAmmo)
 
 func createBulletHole(raycast):
 	var hole = bulletHole.instantiate()
@@ -52,14 +53,14 @@ func createBulletHole(raycast):
 	hole.position = raycast.get_collision_point() + raycast.get_collision_normal() / 100
 	hole.basis = hole.basis.looking_at(raycast.get_collision_normal(), Vector3.UP)
 	hole.rotation.z += randf_range(-PI, PI)
-	get_tree().root.get_node("Lab1").add_child(hole)
+	get_parent().get_parent().get_parent().get_parent().get_parent().add_child(hole)
 
 func _on_timer_timeout() -> void:
 	var tempAmmo = TotalAmmo
 	modifyAmmo(Ammo - MaxAmmo)
 	Ammo = clamp(0, Ammo + tempAmmo, MaxAmmo)
-	if get_tree().root.get_node("Lab1/Hud"):
-		get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+	if HUD:
+		HUD.changeAmmo(Ammo, MaxAmmo)
 
 func createReloadTimer():
 	reloadTimer = Timer.new()

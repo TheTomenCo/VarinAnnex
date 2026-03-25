@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://l0np81ivq3dg"]
+[gd_scene load_steps=8 format=3 uid="uid://l0np81ivq3dg"]
 
 [ext_resource type="Script" uid="uid://cc8vky3a4e80y" path="res://scripts/moveScript.gd" id="1_upsj2"]
-[ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weaponHandler.tscn" id="2_fioyg"]
-[ext_resource type="PackedScene" uid="uid://bfg0j4ilps8lh" path="res://scenes/pistol.tscn" id="3_bgq5m"]
+[ext_resource type="PackedScene" uid="uid://d2eoeaxflvsp8" path="res://scenes/weapons/weaponHandler.tscn" id="2_fioyg"]
+[ext_resource type="PackedScene" uid="uid://cjjvnyudpw702" path="res://scenes/menus/HUD.tscn" id="2_qs3ox"]
+[ext_resource type="PackedScene" uid="uid://bfg0j4ilps8lh" path="res://scenes/weapons/pistol.tscn" id="3_bgq5m"]
 [ext_resource type="Script" uid="uid://bgp5ulv5hwpr4" path="res://scripts/door_handler.gd" id="4_kogni"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p1a4w"]
@@ -35,6 +36,8 @@ one_shot = true
 [node name="invincibilityTimer" type="Timer" parent="AbsolutePlayer"]
 wait_time = 0.467
 one_shot = true
+
+[node name="Hud" parent="AbsolutePlayer" instance=ExtResource("2_qs3ox")]
 
 [node name="CameraContainer" type="Node3D" parent="AbsolutePlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)

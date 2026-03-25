@@ -1,7 +1,8 @@
-extends "res://scripts/Weapon.gd"
+extends "res://scripts/weapon.gd"
 var pellets = 30
 
 func _ready() -> void:
+	HUD = get_parent().get_parent().get_parent().get_node("Hud")
 	MaxAmmo = 2
 	Ammo = MaxAmmo
 	TotalAmmo = 15
@@ -40,6 +41,5 @@ func shoot():
 			if collider:
 				print(hits, " pellets hit ", collider.get_collider().get_parent().name, " at ", collider.get_collision_point(), " and dealt a total of ", Damage*hits, " damage")
 				
-	if get_tree().root.get_node("Lab1/Hud"):
-		if get_tree().root.get_node("Lab1/Hud"):
-			get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
+	if HUD:
+		HUD.changeAmmo(Ammo, MaxAmmo)

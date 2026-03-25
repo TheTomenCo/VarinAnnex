@@ -100,17 +100,38 @@ func _physics_process(delta: float) -> void:
 			pass
 	move_and_slide()
 
-
 func modifyHP(HPAmount):
 	if HP + HPAmount >= 0 and $invincibilityTimer.is_stopped():
 		HP += HPAmount
 		if HPAmount < 0 and HPAmount <= 100:
 			$invincibilityTimer.start()
-		if get_tree().root.get_node("Lab1/Hud"):
-			get_tree().root.get_node("Lab1/Hud").changeHp(HP)
-
+		if $Hud:
+			$Hud.changeHp(HP)
 
 func fullHeal():
 	HP = MaxHP
-	if get_tree().root.get_node("Lab1/Hud"):
-		get_tree().root.get_node("Lab1/Hud").changeHp(HP)
+	if $Hud:
+		$Hud.changeHp(HP)
+		
+func save_data():
+	var weapons = $CameraContainer/weaponHandler
+	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
+	"hp" : HP,
+	"weapons" : weapons.weapons,
+	"selected_weapon" : weapons.selected, 
+	"ammo" : weapons.get_child(weapons.selected).Ammo, 
+	"total_ammo" : weapons.get_child(weapons.selected).TotalAmmo}
+	
+func load_data(data):
+	var weapons = $CameraContainer/weaponHandler
+	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
+	HP = int(data["hp"])
+	weapons.weapons = data["weapons"]
+	weapons.selected = data["selected_weapon"]
+	weapons.addWeapon(0)
+	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
+	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
+	if $Hud:
+			$Hud.changeHp(HP)
+			$Hud.changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
+			$Hud.changeTotalAmmo(int(data["total_ammo"]))

@@ -1,5 +1,5 @@
 extends Node3D
-@export var weapons: Array[PackedScene] = [load("res://scenes/weapons/pistol.tscn")]
+@export var weapons: Array = [load("res://scenes/weapons/pistol.tscn")]
 var selected = 0
 
 func _ready() -> void:
@@ -20,9 +20,9 @@ func _input(event: InputEvent) -> void:
 			get_child(selected).modifyAmmo(0)
 
 func addWeapon(Weapon):
-	if Weapon not in weapons:
-		weapons.append(Weapon)
-	if weapons[-1]:
-		var instance = weapons[-1].instantiate()
-		add_child(instance)
-		selected = len(weapons) - 1
+	for child in get_children():
+		child.queue_free()
+	if Weapon not in weapons and Weapon != 0:
+		weapons.append(load(Weapon))
+	for weapon in weapons:
+		add_child(weapon)
