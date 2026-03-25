@@ -720,4 +720,3 @@ transform = Transform3D(-2.259264e-07, 0, 0.99999994, 0, 3.7657588, 0, -5.168593
 transform = Transform3D(-2.259264e-07, 0, 0.99999994, 0, 3.7657588, 0, -5.1685934, 0, -4.3711385e-08, 7.482806, 0.11907423, 0.8946929)
 
 [node name="pause_menu" parent="." instance=ExtResource("16_xdoyf")]
-visible = false

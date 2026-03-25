@@ -1,30 +1,36 @@
-extends Control
+extends CanvasLayer
 
-func resumeCheck():
+func _ready() -> void:
+	visible = false
 	get_tree().paused = false
 
 
-func pauseCheck():
-	get_tree().paused = true
-
-
-func pause():
-	if Input.is_action_just_pressed("pause") and get_tree().paused == false:
-		visible = true
-		pauseCheck()
-	elif Input.is_action_just_pressed("pause") and get_tree().paused == true:
-		visible = false
-		resumeCheck()
+#open pause menu when esc is pressed and pause the game
+#ISSUE 25/03/26: mouse is only re-locking when resume is pressed and not when pause is pressed again
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pause"):
+		if get_tree().paused:
+			visible = false
+			get_tree().paused = false
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		else:
+			visible = true
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			get_tree().paused = true
 
 
 func _on_resume_pressed() -> void:
-	resumeCheck()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	visible = false
+	get_tree().paused = false
 
 
 func _on_settings_pressed() -> void:
 	#change_scene_to_file("res://Menus/whatever_shi")
+	#get_tree().paused = false
 	pass
 
 
 func _on_quit_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
