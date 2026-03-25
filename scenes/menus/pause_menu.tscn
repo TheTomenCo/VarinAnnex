@@ -8,18 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://d3x7bvw7vsk8y" path="res://artAssets/buttons/PauseQUITBase.png" id="6_bswfk"]
 [ext_resource type="Texture2D" uid="uid://como2j8l1yvey" path="res://artAssets/buttons/PauseQUITSelected.png" id="7_o46v2"]
 
-[node name="pause_menu" type="Control"]
+[node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_iptcy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_left = 247.00002
 offset_top = 56.0
 offset_right = 287.00003
@@ -28,6 +21,7 @@ scale = Vector2(36.446312, 23.57676)
 color = Color(0.19607843, 0.19607843, 0.19607843, 0.27450982)
 
 [node name="buttonManager" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 224.0
 offset_top = 68.0

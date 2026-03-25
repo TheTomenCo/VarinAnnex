@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://blwy1d6adleoy"]
+
+[ext_resource type="PackedScene" uid="uid://cdnkukswgunhq" path="res://scenes/BlenderImports/CRTMonitor.blend" id="1_w1p67"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdtlh"]
+size = Vector3(0.50109863, 0.49487305, 0.5070801)
+
+[node name="CRTMonitorFull" type="Node3D"]
+
+[node name="CRTMonitor" parent="." instance=ExtResource("1_w1p67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03105092, 1.1920929e-07, -0.028046846)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031188965, 0.25256348, -0.040893555)
+shape = SubResource("BoxShape3D_pdtlh")

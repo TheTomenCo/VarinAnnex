@@ -1,7 +1,7 @@
 extends CharacterBody3D
-@export var speed = 25.0
-const BOOST = 580.0
-const JUMP_VELOCITY = 10.0
+@export var speed = 7.0
+const BOOST = 250.0
+const JUMP_VELOCITY = 3.50
 var MaxHP = 100
 var HP = MaxHP
 var doubleJumped = false
