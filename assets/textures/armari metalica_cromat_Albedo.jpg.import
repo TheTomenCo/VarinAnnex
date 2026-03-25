@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc18fqtms4hdb"
-path.s3tc="res://.godot/imported/armari metalica_cromat_Albedo.jpg-e30ec069862396bcb52ac517073fdb3c.s3tc.ctex"
+path.s3tc="res://.godot/imported/armari metalica_cromat_Albedo.jpg-0f5a8ca14b493ff070f10a0f00d28b6b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/textures/armari metalica_cromat_Albedo.jpg"
-dest_files=["res://.godot/imported/armari metalica_cromat_Albedo.jpg-e30ec069862396bcb52ac517073fdb3c.s3tc.ctex"]
+source_file="res://assets/textures/armari metalica_cromat_Albedo.jpg"
+dest_files=["res://.godot/imported/armari metalica_cromat_Albedo.jpg-0f5a8ca14b493ff070f10a0f00d28b6b.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cod2hvnh1lhi8"
-path.s3tc="res://.godot/imported/RailsBaseColor_2048px.jpg-ed6d25d123cf6b1256ee4dcecc135023.s3tc.ctex"
+path.s3tc="res://.godot/imported/RailsBaseColor_2048px.jpg-c0d96295eb17510761c862b2ea3955da.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/RailsBaseColor_2048px.jpg"
-dest_files=["res://.godot/imported/RailsBaseColor_2048px.jpg-ed6d25d123cf6b1256ee4dcecc135023.s3tc.ctex"]
+source_file="res://assets/textures/RailsBaseColor_2048px.jpg"
+dest_files=["res://.godot/imported/RailsBaseColor_2048px.jpg-c0d96295eb17510761c862b2ea3955da.s3tc.ctex"]
 
 [params]
 

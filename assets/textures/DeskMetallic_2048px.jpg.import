@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cowqgqgdyqv5o"
-path="res://.godot/imported/DeskMetallic_2048px.jpg-ed24da44c96080c9f71040803e8486bb.ctex"
+path="res://.godot/imported/DeskMetallic_2048px.jpg-d06ff180fdc1a1c26556d152e4649d1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/textures/DeskMetallic_2048px.jpg"
-dest_files=["res://.godot/imported/DeskMetallic_2048px.jpg-ed24da44c96080c9f71040803e8486bb.ctex"]
+source_file="res://assets/textures/DeskMetallic_2048px.jpg"
+dest_files=["res://.godot/imported/DeskMetallic_2048px.jpg-d06ff180fdc1a1c26556d152e4649d1e.ctex"]
 
 [params]
 

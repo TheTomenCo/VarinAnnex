@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://btv6n0jyeuf15"
-path="res://.godot/imported/metalCabinet.blend-52cd8dc3b701b5fcfa04be2abc312540.scn"
+path="res://.godot/imported/metalCabinet.blend-196437c5a4585f5901197f9724604a26.scn"
 
 [deps]
 
-source_file="res://meshes/props/metalCabinet.blend"
-dest_files=["res://.godot/imported/metalCabinet.blend-52cd8dc3b701b5fcfa04be2abc312540.scn"]
+source_file="res://assets/meshes/props/metalCabinet.blend"
+dest_files=["res://.godot/imported/metalCabinet.blend-196437c5a4585f5901197f9724604a26.scn"]
 
 [params]
 

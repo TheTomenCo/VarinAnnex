@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhs6w0iypqd3"
-path="res://.godot/imported/AA-12.blend-75b7446d0234c4d8b9d3a863d350d3b4.scn"
+path="res://.godot/imported/AA-12.blend-4993501e130fb4a410153c5e2967ecad.scn"
 
 [deps]
 
-source_file="res://meshes/guns/AA-12.blend"
-dest_files=["res://.godot/imported/AA-12.blend-75b7446d0234c4d8b9d3a863d350d3b4.scn"]
+source_file="res://assets/meshes/weapons/AA-12.blend"
+dest_files=["res://.godot/imported/AA-12.blend-4993501e130fb4a410153c5e2967ecad.scn"]
 
 [params]
 

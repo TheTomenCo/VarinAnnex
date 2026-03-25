@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbgv8d1r83gls"
-path="res://.godot/imported/armari metalica_cromat_Displacement.exr-a794ff7222a3133c4dbb0ce45d4a0674.ctex"
+path="res://.godot/imported/armari metalica_cromat_Displacement.exr-b4486e3a01d87bd8001f57d2b76be320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://meshes/props/textures/armari metalica_cromat_Displacement.exr"
-dest_files=["res://.godot/imported/armari metalica_cromat_Displacement.exr-a794ff7222a3133c4dbb0ce45d4a0674.ctex"]
+source_file="res://assets/meshes/props/textures/armari metalica_cromat_Displacement.exr"
+dest_files=["res://.godot/imported/armari metalica_cromat_Displacement.exr-b4486e3a01d87bd8001f57d2b76be320.ctex"]
 
 [params]
 

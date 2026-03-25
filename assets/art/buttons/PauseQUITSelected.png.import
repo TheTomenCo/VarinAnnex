@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://como2j8l1yvey"
-path="res://.godot/imported/PauseQUITSelected.png-f186e2c30c192b2b7731c6d93f6f735d.ctex"
+path="res://.godot/imported/PauseQUITSelected.png-8a6001e9e44a3046b1ed89eb6be1dd1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/buttons/PauseQUITSelected.png"
-dest_files=["res://.godot/imported/PauseQUITSelected.png-f186e2c30c192b2b7731c6d93f6f735d.ctex"]
+source_file="res://assets/art/buttons/PauseQUITSelected.png"
+dest_files=["res://.godot/imported/PauseQUITSelected.png-8a6001e9e44a3046b1ed89eb6be1dd1e.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvlemqk0hrpyn"
-path.s3tc="res://.godot/imported/RailsNormal_2048px.jpg-4d4d720862944c1fd98f284dc7e1690f.s3tc.ctex"
+path.s3tc="res://.godot/imported/RailsNormal_2048px.jpg-1caf003bc20d2505d9e440459e652ec6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/RailsNormal_2048px.jpg"
-dest_files=["res://.godot/imported/RailsNormal_2048px.jpg-4d4d720862944c1fd98f284dc7e1690f.s3tc.ctex"]
+source_file="res://assets/textures/RailsNormal_2048px.jpg"
+dest_files=["res://.godot/imported/RailsNormal_2048px.jpg-1caf003bc20d2505d9e440459e652ec6.s3tc.ctex"]
 
 [params]
 

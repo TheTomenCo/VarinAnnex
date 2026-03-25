@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://bephpeir23ibq"
-path="res://.godot/imported/shelves.obj-469aeba766a08b2ec077712ea74a8c4c.mesh"
+path="res://.godot/imported/shelves.obj-a2d45c203e01d3981480d895873e5cca.mesh"
 
 [deps]
 
-files=["res://.godot/imported/shelves.obj-469aeba766a08b2ec077712ea74a8c4c.mesh"]
+files=["res://.godot/imported/shelves.obj-a2d45c203e01d3981480d895873e5cca.mesh"]
 
-source_file="res://meshes/props/shelves/shelves.obj"
-dest_files=["res://.godot/imported/shelves.obj-469aeba766a08b2ec077712ea74a8c4c.mesh", "res://.godot/imported/shelves.obj-469aeba766a08b2ec077712ea74a8c4c.mesh"]
+source_file="res://assets/meshes/props/shelves/shelves.obj"
+dest_files=["res://.godot/imported/shelves.obj-a2d45c203e01d3981480d895873e5cca.mesh", "res://.godot/imported/shelves.obj-a2d45c203e01d3981480d895873e5cca.mesh"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br1slct8755u1"
-path="res://.godot/imported/VarinOne.png-43a8219388a40a569cbe95764adf3653.ctex"
+path="res://.godot/imported/VarinOne.png-5ba9aa967ddd62e9831ae4e81f41354a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/logos/VarinOne.png"
-dest_files=["res://.godot/imported/VarinOne.png-43a8219388a40a569cbe95764adf3653.ctex"]
+source_file="res://assets/art/logos/VarinOne.png"
+dest_files=["res://.godot/imported/VarinOne.png-5ba9aa967ddd62e9831ae4e81f41354a.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://na72mmj07wcl"
-path.s3tc="res://.godot/imported/HandlesNormal_2048px.jpg-4a339b46df01a88e5e63db59bb8fb1d2.s3tc.ctex"
+path.s3tc="res://.godot/imported/HandlesNormal_2048px.jpg-ee72b5c2913ab58e57b7879a3ba0857a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/HandlesNormal_2048px.jpg"
-dest_files=["res://.godot/imported/HandlesNormal_2048px.jpg-4a339b46df01a88e5e63db59bb8fb1d2.s3tc.ctex"]
+source_file="res://assets/textures/HandlesNormal_2048px.jpg"
+dest_files=["res://.godot/imported/HandlesNormal_2048px.jpg-ee72b5c2913ab58e57b7879a3ba0857a.s3tc.ctex"]
 
 [params]
 

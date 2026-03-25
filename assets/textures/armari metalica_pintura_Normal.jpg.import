@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brflfup1bpcai"
-path.s3tc="res://.godot/imported/armari metalica_pintura_Normal.jpg-e7377e30087a38cb782ecd8dd402da84.s3tc.ctex"
+path.s3tc="res://.godot/imported/armari metalica_pintura_Normal.jpg-5f992157b955afcf9053feb0fa980cf8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/textures/armari metalica_pintura_Normal.jpg"
-dest_files=["res://.godot/imported/armari metalica_pintura_Normal.jpg-e7377e30087a38cb782ecd8dd402da84.s3tc.ctex"]
+source_file="res://assets/textures/armari metalica_pintura_Normal.jpg"
+dest_files=["res://.godot/imported/armari metalica_pintura_Normal.jpg-5f992157b955afcf9053feb0fa980cf8.s3tc.ctex"]
 
 [params]
 

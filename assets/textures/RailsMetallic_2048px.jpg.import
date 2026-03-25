@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsysbh1qlvjrw"
-path="res://.godot/imported/RailsMetallic_2048px.jpg-c4b0fb37f53ca823198e0e88f82e9b7a.ctex"
+path="res://.godot/imported/RailsMetallic_2048px.jpg-fa7de23aed718b9c36e687f85dc532a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/textures/RailsMetallic_2048px.jpg"
-dest_files=["res://.godot/imported/RailsMetallic_2048px.jpg-c4b0fb37f53ca823198e0e88f82e9b7a.ctex"]
+source_file="res://assets/textures/RailsMetallic_2048px.jpg"
+dest_files=["res://.godot/imported/RailsMetallic_2048px.jpg-fa7de23aed718b9c36e687f85dc532a5.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2q87r5efq2rs"
-path.s3tc="res://.godot/imported/HandlesBaseColor_2048px.jpg-bc07866ace86e82f9dafde6ff415186a.s3tc.ctex"
+path.s3tc="res://.godot/imported/HandlesBaseColor_2048px.jpg-aa85e5571b9c3ef64a200027a701328b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/HandlesBaseColor_2048px.jpg"
-dest_files=["res://.godot/imported/HandlesBaseColor_2048px.jpg-bc07866ace86e82f9dafde6ff415186a.s3tc.ctex"]
+source_file="res://assets/textures/HandlesBaseColor_2048px.jpg"
+dest_files=["res://.godot/imported/HandlesBaseColor_2048px.jpg-aa85e5571b9c3ef64a200027a701328b.s3tc.ctex"]
 
 [params]
 

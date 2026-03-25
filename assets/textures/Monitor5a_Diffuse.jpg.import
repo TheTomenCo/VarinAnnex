@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byeg886qey7in"
-path.s3tc="res://.godot/imported/Monitor5a_Diffuse.jpg-f2054362ff0aa0a96ed6144f8d107eea.s3tc.ctex"
+path.s3tc="res://.godot/imported/Monitor5a_Diffuse.jpg-f4efe0032743900c2fa0c69ece41c8d3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/Monitor5a_Diffuse.jpg"
-dest_files=["res://.godot/imported/Monitor5a_Diffuse.jpg-f2054362ff0aa0a96ed6144f8d107eea.s3tc.ctex"]
+source_file="res://assets/textures/Monitor5a_Diffuse.jpg"
+dest_files=["res://.godot/imported/Monitor5a_Diffuse.jpg-f4efe0032743900c2fa0c69ece41c8d3.s3tc.ctex"]
 
 [params]
 

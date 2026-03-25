@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bcob3f7o78rfi"
-path="res://.godot/imported/wallLight.blend-4390d69624c9a6a2e0432aff147e2224.scn"
+path="res://.godot/imported/wallLight.blend-cc4ae0121b2a8fd02bcfa781bfd22818.scn"
 
 [deps]
 
-source_file="res://scenes/wallLight.blend"
-dest_files=["res://.godot/imported/wallLight.blend-4390d69624c9a6a2e0432aff147e2224.scn"]
+source_file="res://assets/meshes/props/wallLight.blend"
+dest_files=["res://.godot/imported/wallLight.blend-cc4ae0121b2a8fd02bcfa781bfd22818.scn"]
 
 [params]
 

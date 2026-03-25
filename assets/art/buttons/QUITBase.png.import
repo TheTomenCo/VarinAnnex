@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4e5xp7su138s"
-path="res://.godot/imported/QUITBase.png-43cef3aa31fb20134901b1a2a548c02f.ctex"
+path="res://.godot/imported/QUITBase.png-eb95f91bd23a2e49e74f9217a3f11400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/buttons/QUITBase.png"
-dest_files=["res://.godot/imported/QUITBase.png-43cef3aa31fb20134901b1a2a548c02f.ctex"]
+source_file="res://assets/art/buttons/QUITBase.png"
+dest_files=["res://.godot/imported/QUITBase.png-eb95f91bd23a2e49e74f9217a3f11400.ctex"]
 
 [params]
 

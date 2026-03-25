@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqgm2pqndpvkx"
-path.s3tc="res://.godot/imported/Metal scratched seamless texture.jpg-ec0699ae102d1482bb9b242cce81d12c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Metal scratched seamless texture.jpg-f5c66af92b60fa444ba4ee464cccf506.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/textures/Metal scratched seamless texture.jpg"
-dest_files=["res://.godot/imported/Metal scratched seamless texture.jpg-ec0699ae102d1482bb9b242cce81d12c.s3tc.ctex"]
+source_file="res://assets/textures/Metal scratched seamless texture.jpg"
+dest_files=["res://.godot/imported/Metal scratched seamless texture.jpg-f5c66af92b60fa444ba4ee464cccf506.s3tc.ctex"]
 
 [params]
 

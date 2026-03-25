@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgt6iigp6575t"
-path="res://.godot/imported/armari metalica_cromat_Metalness.jpg-061346d4141b752be092747f9c8935ff.ctex"
+path="res://.godot/imported/armari metalica_cromat_Metalness.jpg-7ead5b90f57017712f4f0d48e4dbb164.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/textures/armari metalica_cromat_Metalness.jpg"
-dest_files=["res://.godot/imported/armari metalica_cromat_Metalness.jpg-061346d4141b752be092747f9c8935ff.ctex"]
+source_file="res://assets/textures/armari metalica_cromat_Metalness.jpg"
+dest_files=["res://.godot/imported/armari metalica_cromat_Metalness.jpg-7ead5b90f57017712f4f0d48e4dbb164.ctex"]
 
 [params]
 

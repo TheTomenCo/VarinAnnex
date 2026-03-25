@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc7lsqur6urpv"
-path="res://.godot/imported/HandlesMetallic_2048px.jpg-223af661fec5dddcfd0f84fa1e9969bc.ctex"
+path="res://.godot/imported/HandlesMetallic_2048px.jpg-5413dc60203f1816fedb8c1c63c4798c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/textures/HandlesMetallic_2048px.jpg"
-dest_files=["res://.godot/imported/HandlesMetallic_2048px.jpg-223af661fec5dddcfd0f84fa1e9969bc.ctex"]
+source_file="res://assets/textures/HandlesMetallic_2048px.jpg"
+dest_files=["res://.godot/imported/HandlesMetallic_2048px.jpg-5413dc60203f1816fedb8c1c63c4798c.ctex"]
 
 [params]
 

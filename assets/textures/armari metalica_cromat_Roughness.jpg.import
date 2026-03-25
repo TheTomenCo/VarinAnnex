@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dujw2xods563j"
-path.s3tc="res://.godot/imported/armari metalica_cromat_Roughness.jpg-16ac3531588c321e79b2d65f983c4579.s3tc.ctex"
+path.s3tc="res://.godot/imported/armari metalica_cromat_Roughness.jpg-cec4341a1b7c552845a3143a95b02c05.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/textures/armari metalica_cromat_Roughness.jpg"
-dest_files=["res://.godot/imported/armari metalica_cromat_Roughness.jpg-16ac3531588c321e79b2d65f983c4579.s3tc.ctex"]
+source_file="res://assets/textures/armari metalica_cromat_Roughness.jpg"
+dest_files=["res://.godot/imported/armari metalica_cromat_Roughness.jpg-cec4341a1b7c552845a3143a95b02c05.s3tc.ctex"]
 
 [params]
 
