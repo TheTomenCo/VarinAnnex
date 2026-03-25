@@ -1,12 +1,12 @@
 extends Node3D
 var MaxAmmo = 10
 var Ammo = MaxAmmo
-var TotalAmmo = 100 #Extra magazines
+var TotalAmmo = 100 # Extra magazines
 var Damage = 10
 var Cooldown = 0.5
 var ReloadTime = 0.5
 var maxRange = 32
-var bulletHole = preload("res://scenes/bullet_hole.tscn")
+var bulletHole = preload("res://scenes/weapons/bullet_hole.tscn")
 var reloadTimer
 
 func _ready() -> void:
@@ -29,7 +29,7 @@ func shoot():
 		if get_tree().root.get_node("Lab1/Hud"):
 			get_tree().root.get_node("Lab1/Hud").changeAmmo(Ammo, MaxAmmo)
 	
-func reload():	
+func reload():
 	if reloadTimer.is_stopped() and TotalAmmo > 0:
 		print("Reloading")
 		reloadTimer.start()
@@ -48,8 +48,8 @@ func modifyAmmo(AmmoAmount):
 func createBulletHole(raycast):
 	var hole = bulletHole.instantiate()
 	var scalingFactor = randf_range(0.8, 1.1)
-	hole.get_child(0).scale = hole.get_child(0).scale*scalingFactor
-	hole.position = raycast.get_collision_point() + raycast.get_collision_normal()/100
+	hole.get_child(0).scale = hole.get_child(0).scale * scalingFactor
+	hole.position = raycast.get_collision_point() + raycast.get_collision_normal() / 100
 	hole.basis = hole.basis.looking_at(raycast.get_collision_normal(), Vector3.UP)
 	hole.rotation.z += randf_range(-PI, PI)
 	get_tree().root.get_node("Lab1").add_child(hole)

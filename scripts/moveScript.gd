@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		$slideStream.play()
 		sliding = true
 		cam.transform.origin = Vector3(0, -0.3, 0)
-		$CollisionShape3D.shape = load("res://scenes/PlayerCollisionSlide.tres")
+		$CollisionShape3D.shape = load("res://assets/materials/player/PlayerCollisionSlide.tres")
 		velocity.x = direction.x * slide_speed
 		velocity.z = direction.z * slide_speed
 		slide_speed = move_toward(slide_speed, 0, 0.25)
@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		
 	if not sliding:
 		cam.transform.origin = Vector3(0, 0, 0)
-		$CollisionShape3D.shape = load("res://scenes/PlayerCollision.tres")
+		$CollisionShape3D.shape = load("res://assets/materials/player/PlayerCollision.tres")
 		#input for directional travel
 		input_dir = Input.get_vector("left", "right", "forward", "backward")
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
