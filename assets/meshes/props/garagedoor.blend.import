@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gwlqleu7fu1n"
-path="res://.godot/imported/garagedoor.blend-990afc8cfdac51e02286889b1a8f3c5a.scn"
+path="res://.godot/imported/garagedoor.blend-7be8aa709031713eeac53e1a5ef40073.scn"
 
 [deps]
 
-source_file="res://scenes/garagedoor.blend"
-dest_files=["res://.godot/imported/garagedoor.blend-990afc8cfdac51e02286889b1a8f3c5a.scn"]
+source_file="res://meshes/props/garagedoor.blend"
+dest_files=["res://.godot/imported/garagedoor.blend-7be8aa709031713eeac53e1a5ef40073.scn"]
 
 [params]
 

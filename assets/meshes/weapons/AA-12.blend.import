@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1gjut31kb3w"
-path="res://.godot/imported/industrialCeilingLight.blend-36aed356a65dae0b06a17522915644d0.scn"
+uid="uid://dhs6w0iypqd3"
+path="res://.godot/imported/AA-12.blend-75b7446d0234c4d8b9d3a863d350d3b4.scn"
 
 [deps]
 
-source_file="res://scenes/industrialCeilingLight.blend"
-dest_files=["res://.godot/imported/industrialCeilingLight.blend-36aed356a65dae0b06a17522915644d0.scn"]
+source_file="res://meshes/guns/AA-12.blend"
+dest_files=["res://.godot/imported/AA-12.blend-75b7446d0234c4d8b9d3a863d350d3b4.scn"]
 
 [params]
 
