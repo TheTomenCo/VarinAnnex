@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byp6tbqdaqbxi"]
+
+[ext_resource type="PackedScene" uid="uid://bbqbyjjsscv8n" path="res://scenes/BlenderImports/cargoPallet.blend" id="1_1kh60"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ki8cg"]
+size = Vector3(1.1625977, 1.903122, 2.0355225)
+
+[node name="cargoPallet" type="Node3D"]
+
+[node name="cargoPallet" parent="." instance=ExtResource("1_1kh60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016635656, 0, 0.051838636)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1159668, 0.9147568, 0.0004272461)
+shape = SubResource("BoxShape3D_ki8cg")

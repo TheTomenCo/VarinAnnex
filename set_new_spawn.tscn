@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvvwnxr1twgbc"]
+
+[ext_resource type="Script" uid="uid://5a5oe6srul0c" path="res://scripts/set_new_spawn.gd" id="1_lah7t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qii8v"]
+size = Vector3(1, 2.4052124, 0.22161865)
+
+[node name="setNewSpawn" type="Node3D"]
+script = ExtResource("1_lah7t")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7026062, -0.002532959)
+shape = SubResource("BoxShape3D_qii8v")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045167327, 5.571273)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
