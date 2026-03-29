@@ -11,12 +11,13 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
-
+var dashCounter = 0
 
 #start-up function
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
+	get_parent().add_to_group("Save")
 	modifyHP(0)
 
 #camera rotation
@@ -79,13 +80,18 @@ func _physics_process(delta: float) -> void:
 #dashcooldown ended
 		if $dashCooldown.time_left == 0:
 			#print_debug("dash ready")
-			pass
+			dashCounter = 0
 
 #enable dash
-		if direction and Input.is_action_just_pressed("dash") and $dashCooldown.time_left == 0:
+		if direction and Input.is_action_just_pressed("dash") and ((dashCounter == 1 and HP > 100) or $dashCooldown.time_left == 0):
+			if dashCounter == 1:
+				dashCounter = 2
+			elif dashCounter == 0:
+				dashCounter = 1
 			$dashTimer.start()
 			$dashCooldown.start()
 			$dashStream.play()
+			$Hud.changeDashCooldown($dashCooldown.time_left, $dashCooldown.wait_time)
 			#print_debug("dash started")
 
 #during dash, increase speed
@@ -103,7 +109,7 @@ func _physics_process(delta: float) -> void:
 func modifyHP(HPAmount):
 	if HP + HPAmount >= 0 and $invincibilityTimer.is_stopped():
 		HP += HPAmount
-		if HPAmount < 0 and HPAmount <= 100:
+		if HPAmount < 0:
 			$invincibilityTimer.start()
 		if $Hud:
 			$Hud.changeHp(HP)
@@ -113,25 +119,25 @@ func fullHeal():
 	if $Hud:
 		$Hud.changeHp(HP)
 		
-func save_data():
+func save():
 	var weapons = $CameraContainer/weaponHandler
-	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
+	var data = {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
 	"hp" : HP,
-	"weapons" : weapons.weapons,
+	"weapons" : weapons.save(),
 	"selected_weapon" : weapons.selected, 
 	"ammo" : weapons.get_child(weapons.selected).Ammo, 
 	"total_ammo" : weapons.get_child(weapons.selected).TotalAmmo}
+	return data
 	
-func load_data(data):
+func load(data):
 	var weapons = $CameraContainer/weaponHandler
 	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
 	HP = int(data["hp"])
-	weapons.weapons = data["weapons"]
+	weapons.load(data["weapons"])
 	weapons.selected = data["selected_weapon"]
-	weapons.addWeapon(0)
 	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
 	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
 	if $Hud:
-			$Hud.changeHp(HP)
-			$Hud.changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
-			$Hud.changeTotalAmmo(int(data["total_ammo"]))
+		$Hud.changeHp(HP)
+		$Hud.changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
+		$Hud.changeTotalAmmo(int(data["total_ammo"]))

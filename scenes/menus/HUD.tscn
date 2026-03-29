@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjjvnyudpw702"]
+[gd_scene load_steps=12 format=3 uid="uid://cjjvnyudpw702"]
 
 [ext_resource type="Script" uid="uid://cn725xicvml78" path="res://scripts/hud.gd" id="1_qpvh6"]
+[ext_resource type="Texture2D" uid="uid://cscy7vemv8cys" path="res://assets/art/UI/HealthBarBackground.png" id="2_4maxk"]
+[ext_resource type="Texture2D" uid="uid://bxpliyucr2now" path="res://assets/art/UI/BulletIcon.png" id="2_dhgmt"]
+[ext_resource type="Texture2D" uid="uid://dvlysltceb1it" path="res://assets/art/UI/HealthBar.png" id="3_v3b6h"]
+[ext_resource type="Texture2D" uid="uid://bayyttah060k5" path="res://assets/art/UI/Crosshair.png" id="4_v3b6h"]
+[ext_resource type="Texture2D" uid="uid://dptjko8h4rjuj" path="res://assets/art/UI/HealthBarOvercharge.png" id="5_mm7it"]
+[ext_resource type="Texture2D" uid="uid://mku2ogk4ehlw" path="res://assets/art/UI/Dash.png" id="6_8r60w"]
+[ext_resource type="Texture2D" uid="uid://b21so58dg1o3r" path="res://assets/art/UI/HealthBarBackgroundOvercharge.png" id="6_w27lc"]
+[ext_resource type="Texture2D" uid="uid://chnrcp3wcgfvu" path="res://assets/art/UI/DashOvercharge.png" id="8_0st1p"]
+[ext_resource type="Texture2D" uid="uid://didflm33l2vyj" path="res://assets/art/UI/WeaponSelectDetails.png" id="8_4i7vm"]
+[ext_resource type="Texture2D" uid="uid://dfob6c3xvnsmx" path="res://assets/art/UI/WeaponSelectDetailsOvercharge.png" id="10_hxeqs"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -15,44 +25,111 @@ script = ExtResource("1_qpvh6")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="HP" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.023000002
-anchor_top = 0.71500003
-anchor_right = 0.023000002
-anchor_bottom = 0.71500003
-offset_left = 3.5039978
-offset_top = -13.320007
-offset_right = 170.504
-offset_bottom = 155.68
-theme_override_font_sizes/font_size = 60
-text = "0
-"
+[node name="Crosshair" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960, 540)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_v3b6h")
 
-[node name="TotalAmmo" type="Label" parent="CanvasLayer"]
+[node name="Health" type="CanvasGroup" parent="CanvasLayer"]
+position = Vector2(0, 100)
+scale = Vector2(0.85, 0.85)
+
+[node name="HealthBarBackground" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(425, 925)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_4maxk")
+
+[node name="HealthBarBackgroundOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(425.00003, 925)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("6_w27lc")
+
+[node name="HealthBar" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(270, 948.0001)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("3_v3b6h")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1275, 97)
+
+[node name="HealthBarOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(270, 948.0001)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("5_mm7it")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1275, 97)
+
+[node name="Dash" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(270, 1006)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_8r60w")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 420, 50)
+
+[node name="DashOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(270, 1006)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("8_0st1p")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 420, 50)
+
+[node name="WeaponSelectDetails" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(146, 921)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("8_4i7vm")
+
+[node name="WeaponSelectDetailsOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(146, 921)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("10_hxeqs")
+
+[node name="Ammo" type="CanvasGroup" parent="CanvasLayer"]
+position = Vector2(-400, 50)
+
+[node name="TotalAmmo" type="Label" parent="CanvasLayer/Ammo"]
 anchors_preset = -1
 anchor_left = 0.026
 anchor_top = 0.85200006
 anchor_right = 0.026
 anchor_bottom = 0.85200006
-offset_left = 270.048
-offset_top = -2.0960083
-offset_right = 440.048
-offset_bottom = 166.90399
+offset_left = 1099.0
+offset_top = 908.0
+offset_right = 1269.0
+offset_bottom = 1077.0
 theme_override_font_sizes/font_size = 60
 text = "0
 "
 
-[node name="Ammo" type="Label" parent="CanvasLayer"]
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer/Ammo"]
+position = Vector2(810, 950)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_dhgmt")
+
+[node name="Ammo" type="Label" parent="CanvasLayer/Ammo"]
 anchors_preset = -1
 anchor_left = 0.026
 anchor_top = 0.85200006
 anchor_right = 0.026
 anchor_bottom = 0.85200006
-offset_left = 0.048000336
-offset_top = -2.0960083
-offset_right = 170.048
-offset_bottom = 166.90399
+offset_left = 852.0
+offset_top = 906.0
+offset_right = 1022.0
+offset_bottom = 1075.0
 theme_override_font_sizes/font_size = 60
 text = "0
 "
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="DiscretionTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="DiscretionTimer" to="." method="_on_discretion_timer_timeout"]

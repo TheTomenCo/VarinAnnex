@@ -20,9 +20,19 @@ func _input(event: InputEvent) -> void:
 			get_child(selected).modifyAmmo(0)
 
 func addWeapon(Weapon):
+	if Weapon not in weapons:
+		weapons.append(Weapon)
+		add_child(weapons[-1].instantiate())
+		selected = len(weapons) - 1
+		
+func save():
+	var data = {}
 	for child in get_children():
-		child.queue_free()
-	if Weapon not in weapons and Weapon != 0:
-		weapons.append(load(Weapon))
-	for weapon in weapons:
-		add_child(weapon)
+		data.merge({child.name : {"Ammo" : child.Ammo, "TotalAmmo" : child.TotalAmmo}})
+	return data
+	
+func load(data):
+	for child in get_children():
+		if is_instance_valid(child):
+			child.Ammo = int(data[child.name]["Ammo"])
+			child.TotalAmmo = int(data[child.name]["TotalAmmo"])

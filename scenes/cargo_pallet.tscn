@@ -10,6 +10,8 @@ size = Vector3(1.1625977, 1.903122, 2.0355225)
 [node name="cargoPallet" parent="." instance=ExtResource("1_1kh60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016635656, 0, 0.051838636)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1159668, 0.9147568, 0.0004272461)
 shape = SubResource("BoxShape3D_ki8cg")
