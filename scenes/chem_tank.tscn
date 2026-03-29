@@ -10,6 +10,8 @@ size = Vector3(1.2897644, 1.1311264, 1)
 [node name="chemicalTank" parent="." instance=ExtResource("1_qp8pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028722167, -1.1920929e-07, -0.009086847)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027267456, 0.5713005, 0)
 shape = SubResource("BoxShape3D_a4kgq")

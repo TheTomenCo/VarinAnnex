@@ -10,6 +10,8 @@ size = Vector3(1.7318115, 0.7470703, 0.70703125)
 [node name="LabDesk" parent="." instance=ExtResource("1_84cm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031612754, 0, -0.03125286)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.078308105, 0.36914063, -0.07836914)
 shape = SubResource("BoxShape3D_e0ptj")

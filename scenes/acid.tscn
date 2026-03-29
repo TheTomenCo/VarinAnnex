@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0fat4j2jtp6r"]
+[gd_scene load_steps=8 format=3 uid="uid://b0fat4j2jtp6r"]
 
 [ext_resource type="Script" uid="uid://dyh47gv7w870p" path="res://scripts/acid.gd" id="1_wjwu0"]
 
@@ -7,8 +7,22 @@ size = Vector3(1, 0.4198761, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l1ygu"]
 
+[sub_resource type="Gradient" id="Gradient_wjwu0"]
+colors = PackedColorArray(0.39215687, 0.627451, 0.39215687, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_07fwy"]
+frequency = 0.05
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lunle"]
+width = 2048
+height = 2048
+noise = SubResource("FastNoiseLite_07fwy")
+color_ramp = SubResource("Gradient_wjwu0")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m858t"]
 albedo_color = Color(0.13725491, 0.8784314, 0.08235294, 1)
+albedo_texture = SubResource("NoiseTexture2D_lunle")
 
 [node name="acid" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.7924409, 0, 0, 0, 1, 0, 0, 0)

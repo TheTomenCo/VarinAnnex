@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 		change_color()
 
 func _ready() -> void:
+	if type != Type.weapon:
+		add_to_group("Save")
 	if not Engine.is_editor_hint():
 		change_color()
 
@@ -57,3 +59,19 @@ func change_color():
 		material = material.duplicate()
 		material.albedo_color = Color(0, 1, 0, 1)
 		$MeshInstance3D.material_override = material
+		
+func save():
+	if not Engine.is_editor_hint():
+		if type != Type.weapon:
+			return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
+			"type" : type,
+			"amount" : Amount,
+			"scene" : "res://scenes/pickup.tscn"}
+
+func load(data):
+	if not Engine.is_editor_hint():
+		position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
+		type = data["type"]
+		if type != Type.weapon:
+			Amount = int(data["amount"])
+		change_color()
