@@ -135,3 +135,14 @@ func load_data(data):
 			$Hud.changeHp(HP)
 			$Hud.changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
 			$Hud.changeTotalAmmo(int(data["total_ammo"]))
+
+
+#change to death scene
+func youDied():
+	get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
+
+
+#check if player died
+func deadCheck():
+	if HP == 0:
+		youDied()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=22 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://dbpfr8t68h4g8" path="res://levels/Level.tscn" id="1_i6or5"]
 [ext_resource type="PackedScene" uid="uid://uw1v3o4g56yx" path="res://scenes/wall.tscn" id="2_qpwx5"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://byp6tbqdaqbxi" path="res://scenes/cargo_pallet.tscn" id="17_41gfr"]
 [ext_resource type="PackedScene" uid="uid://cvvwnxr1twgbc" path="res://set_new_spawn.tscn" id="17_l35oo"]
 [ext_resource type="PackedScene" uid="uid://d0ncf8j6nkqsi" path="res://scenes/LabDesk.tscn" id="17_pka41"]
+[ext_resource type="PackedScene" uid="uid://c3ux5fb78uac3" path="res://scenes/acid_wall.tscn" id="19_7dxg8"]
 [ext_resource type="PackedScene" uid="uid://blg2ueskplkq7" path="res://scenes/chem_tank.tscn" id="19_jljs5"]
 
 [sub_resource type="PackedScene" id="PackedScene_l35oo"]
@@ -310,6 +311,18 @@ transform = Transform3D(-4.371138e-08, 0, 8.675364, 0, 2.106553, 0, -1.019671, 0
 
 [node name="upperOuterWall" parent="mainFloor/mainOuterWallCon" index="7" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(1, 0, 0, 0, 2.277229, 0, 0, 0, 10.685825, 8.533585, -0.20289803, 52.479073)
+
+[node name="garagedoor" parent="mainFloor" index="32" instance=ExtResource("15_4o8c2")]
+transform = Transform3D(0.075307705, 0, 0, 0, 15.829921, 0, 0, 0, 0.014289167, -0.016080976, 55.827244, -1.3824167)
+
+[node name="garagedoor2" parent="mainFloor" index="33" instance=ExtResource("15_4o8c2")]
+transform = Transform3D(0.075307705, 0, 0, 0, 15.829921, 0, 0, 0, 0.014289167, -0.016080976, 55.827244, 1.3978028)
+
+[node name="garagedoor3" parent="mainFloor" index="34" instance=ExtResource("15_4o8c2")]
+transform = Transform3D(-3.2918044e-09, 0, 0.01457025, 0, 15.829921, 0, -0.07385489, 0, -6.2459926e-10, 1.3898771, 55.827244, 0.013307789)
+
+[node name="garagedoor4" parent="mainFloor" index="35" instance=ExtResource("15_4o8c2")]
+transform = Transform3D(-3.2918044e-09, 0, 0.01457025, 0, 15.829921, 0, -0.07385489, 0, -6.2459926e-10, -1.1239098, 55.827244, 0.013307789)
 
 [node name="corridors" parent="." index="4" instance=ExtResource("3_ysste")]
 transform = Transform3D(97.00888, 0, 0, 0, 0.23788866, 0, 0, 0, 20.754105, 205.63437, 0, 0.06414688)
@@ -631,7 +644,7 @@ transform = Transform3D(-0.09095447, 0, 0.05367549, 0, 1, 0, -0.5727958, 0, -0.8
 transform = Transform3D(0.011861846, 0, 0, 0, 1, 0, 0, 0, 0.21311228, -0.4989987, -0.0006713867, -6.370221)
 
 [node name="floor7" parent="leftFlank/baseLevel" index="5" instance=ExtResource("3_ysste")]
-transform = Transform3D(0.10761696, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.55426085, -0.0006713867, -6.000513)
+transform = Transform3D(0.10870809, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.55426085, -0.0006713867, -6.000513)
 
 [node name="wall" parent="leftFlank/baseLevel" index="6" instance=ExtResource("2_qpwx5")]
 transform = Transform3D(0.005055808, 0, 0, 0, 4.845095, 0, 0, 0, 0.06818043, -0.60714054, 0.4993286, -5.7786875)
@@ -687,6 +700,42 @@ transform = Transform3D(0.00477164, -0.0013044076, 0.002180196, 0.9864571, 4.361
 [node name="floor19" parent="leftFlank/baseLevel" index="23" instance=ExtResource("3_ysste")]
 transform = Transform3D(-0.07546468, 0, 0.0010634593, 0, 1.0000001, 0, 0.32821882, 0, -0.31935054, 0.11355826, -0.0006713867, -2.329092)
 
+[node name="ChemTank" parent="leftFlank/baseLevel" index="24" instance=ExtResource("19_jljs5")]
+transform = Transform3D(0.010075079, -0.0027167297, -0.00033371692, 2.2758005, 8.314422, 1.0213246, 0, -0.012675436, 0.103188455, 0.1244261, -5.23481, -2.097989)
+
+[node name="ChemTank2" parent="leftFlank/baseLevel" index="25" instance=ExtResource("19_jljs5")]
+transform = Transform3D(0.004905128, -0.0026116178, 0, 1.9802296, 3.7192574, -1.8957762, 0.010670581, 0.020041432, 0.050464533, 0.16552392, -2.670826, -1.7903814)
+
+[node name="ChemTank3" parent="leftFlank/baseLevel" index="26" instance=ExtResource("19_jljs5")]
+transform = Transform3D(0.005055808, 0, 0, 0, 4.203647, 0, 0, 0, 0.05034567, 0.12824789, -2.5699692, -1.6437588)
+
+[node name="ChemTank4" parent="leftFlank/baseLevel" index="27" instance=ExtResource("19_jljs5")]
+transform = Transform3D(0.009787109, 0.0006686826, 0.00034188767, -0.62443084, 7.2453847, 3.70446, 0, -0.044497505, 0.08703065, 0.1529558, -2.2903671, -2.0203514)
+
+[node name="cargoPallet2" parent="leftFlank/baseLevel" index="28" instance=ExtResource("17_41gfr")]
+transform = Transform3D(0.0033101772, -0.0038215078, 0, 3.1773894, 2.752244, 0, 0, 0, 0.05034567, 0.1386204, -2.749504, -1.8255072)
+
+[node name="ChemTank5" parent="leftFlank/baseLevel" index="29" instance=ExtResource("19_jljs5")]
+transform = Transform3D(0.0063806176, -0.0006461684, 2.5128242e-05, 0.5376623, 5.3011527, -0.20615157, 0, 0.0024816557, 0.06381535, 0.16226342, -2.8768845, -1.5999317)
+
+[node name="acidWall" parent="leftFlank/baseLevel" index="30" instance=ExtResource("19_7dxg8")]
+transform = Transform3D(0.000100458776, 0, 0, 0, 19.107536, 0, 0, 0, 6.580816, -0.49988022, -9.390244, -3.385396)
+
+[node name="acidWall2" parent="leftFlank/baseLevel" index="31" instance=ExtResource("19_7dxg8")]
+transform = Transform3D(-4.3911905e-12, 0, 1.0484574, 0, 19.107536, 0, -0.0010003668, 0, -4.563698e-07, 0.00090637803, -10.053772, -0.41991138)
+
+[node name="acidWall3" parent="leftFlank/baseLevel" index="32" instance=ExtResource("19_7dxg8")]
+transform = Transform3D(0.000100458776, 0, 0, 0, 19.107536, 0, 0, 0, 5.972552, 0.50019205, -9.390244, -3.385396)
+
+[node name="acidWall4" parent="leftFlank/baseLevel" index="33" instance=ExtResource("19_7dxg8")]
+transform = Transform3D(-4.3911905e-12, 0, 1.0484574, 0, 19.107536, 0, -0.0010003668, 0, -4.563698e-07, 0.00090637803, -10.053772, -6.4973717)
+
+[node name="acid2" parent="leftFlank/baseLevel" index="34" instance=ExtResource("15_i6or5")]
+transform = Transform3D(0.9146886, 0, 0, 0, 3.331142, 0, 0, 0, 6.167059, -0.034544915, -19.335232, -3.2926254)
+
+[node name="flankSpawn" type="Marker3D" parent="leftFlank/baseLevel" index="35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 1.973774, -0.16169739)
+
 [node name="leftFlank2" type="Node3D" parent="." index="9"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 168.714, 0, 25.99)
 
@@ -725,39 +774,9 @@ light_energy = 4.261
 omni_range = 174.627
 
 [node name="floor20" parent="." index="10" instance=ExtResource("3_ysste")]
-transform = Transform3D(4.677586, 0, -4.0406137, 0, 0.23788866, 0, 17.476515, 0, 1.0814699, 102.943504, -10.782004, -213.67468)
+transform = Transform3D(3.58802, 0, -4.099752, 0, 0.23788866, 0, 17.732302, 0, 0.82955945, 102.31716, -10.782004, -213.67468)
 
 [node name="StairOrchestrator" parent="." index="11" instance=ExtResource("13_17ebi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 55.68719, -13.863653, 0.35942745)
 width = 40
 steps = 28
-
-[node name="garagedoor" parent="." index="12" instance=ExtResource("15_4o8c2")]
-transform = Transform3D(5.1685934, 0, 0, 0, 3.7657588, 0, 0, 0, 1, 83.51642, 0.11907423, -96.78242)
-
-[node name="garagedoor2" parent="." index="13" instance=ExtResource("15_4o8c2")]
-transform = Transform3D(5.1685934, 0, 0, 0, 3.7657588, 0, 0, 0, 1, 83.51642, 0.11907423, 97.785934)
-
-[node name="garagedoor3" parent="." index="14" instance=ExtResource("15_4o8c2")]
-transform = Transform3D(-2.259264e-07, 0, 0.99999994, 0, 3.7657588, 0, -5.1685934, 0, -4.3711385e-08, 180.01154, 0.11907423, 0.8946929)
-
-[node name="garagedoor4" parent="." index="15" instance=ExtResource("15_4o8c2")]
-transform = Transform3D(-2.259264e-07, 0, 0.99999994, 0, 3.7657588, 0, -5.1685934, 0, -4.3711385e-08, 7.482806, 0.11907423, 0.8946929)
-
-[node name="ChemTank" parent="." index="17" instance=ExtResource("19_jljs5")]
-transform = Transform3D(1.9927733, -0.5373483, -0.066006646, 0.54138714, 1.9779067, 0.24296156, 0, -0.25176814, 2.0495994, 109.274895, -12.027146, -219.61473)
-
-[node name="ChemTank2" parent="." index="18" instance=ExtResource("19_jljs5")]
-transform = Transform3D(0.9701966, -0.51655793, 0, 0.47107416, 0.88476914, -0.45098364, 0.21194635, 0.3980766, 1.0023609, 117.40373, -11.417204, -213.50482)
-
-[node name="ChemTank3" parent="." index="19" instance=ExtResource("19_jljs5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.030815, -11.393211, -210.5925)
-
-[node name="ChemTank4" parent="." index="20" instance=ExtResource("19_jljs5")]
-transform = Transform3D(1.935815, 0.1322603, 0.06762276, -0.14854501, 1.7235949, 0.881249, 0, -0.8838397, 1.728662, 114.91785, -11.326697, -218.07265)
-
-[node name="cargoPallet2" parent="." index="21" instance=ExtResource("17_41gfr")]
-transform = Transform3D(0.65472764, -0.7558649, 0, 0.7558649, 0.65472764, 0, 0, 0, 1, 112.08242, -11.435921, -214.20251)
-
-[node name="ChemTank5" parent="." index="22" instance=ExtResource("19_jljs5")]
-transform = Transform3D(1.2685019, 0, 0, 0, 1.2685019, 0, 0, 0, 1.2685019, 116.12181, -11.466223, -209.72198)
