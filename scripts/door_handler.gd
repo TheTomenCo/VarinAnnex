@@ -6,11 +6,12 @@ func _ready() -> void:
 
 func get_door() -> Node3D:
 	if $RayCast3D.is_colliding():
-		var hit = $RayCast3D.get_collider().get_parent().get_parent()
-		#var pos = $RayCast3D.get_collision_point()
-		#print(hit.name, pos)
-		if hit.name == "Door":
-			return hit
+		if $RayCast3D.get_collider().name == "Door":
+			var hit = $RayCast3D.get_collider().get_parent().get_parent()
+			#var pos = $RayCast3D.get_collision_point()
+			#print(hit.name, pos)
+			if hit.name == "Door":
+				return hit
 	return null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

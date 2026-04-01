@@ -23,7 +23,7 @@ func changeAmmo(Ammo, maxAmmo):
 func changeTotalAmmo(TotalAmmo):
 	$CanvasLayer/Ammo/TotalAmmo.text = str(TotalAmmo)
 	
-func changeDashCooldown(time, maxTime):
+func changeDashCooldown(maxTime):
 	$DashCooldown.start(maxTime)
 	$DiscretionTimer.start()
 	

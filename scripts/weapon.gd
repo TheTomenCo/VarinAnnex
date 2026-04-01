@@ -9,6 +9,7 @@ var maxRange = 32
 var bulletHole = preload("res://scenes/weapons/bullet_hole.tscn")
 var reloadTimer
 var HUD
+var scene = "res://scenes/weapons/pistol.tscn"
 
 func _ready() -> void:
 	HUD = get_parent().get_parent().get_parent().get_node("Hud")
@@ -27,6 +28,7 @@ func shoot():
 			if $RayCast3D.is_colliding():
 				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
 				createBulletHole($RayCast3D)
+				dealDamage($RayCast3D, Damage)
 	if HUD:
 		HUD.changeAmmo(Ammo, MaxAmmo)
 	
@@ -47,13 +49,23 @@ func modifyAmmo(AmmoAmount):
 		HUD.changeAmmo(Ammo, MaxAmmo)
 
 func createBulletHole(raycast):
-	var hole = bulletHole.instantiate()
-	var scalingFactor = randf_range(0.8, 1.1)
-	hole.get_child(0).scale = hole.get_child(0).scale * scalingFactor
-	hole.position = raycast.get_collision_point() + raycast.get_collision_normal() / 100
-	hole.basis = hole.basis.looking_at(raycast.get_collision_normal(), Vector3.UP)
-	hole.rotation.z += randf_range(-PI, PI)
-	get_parent().get_parent().get_parent().get_parent().get_parent().add_child(hole)
+	if not raycast.get_collider().is_class("CharacterBody3D"):
+		var hole = bulletHole.instantiate()
+		var scalingFactor = randf_range(0.8, 1.1)
+		hole.get_child(0).scale = hole.get_child(0).scale * scalingFactor
+		hole.position = raycast.get_collision_point() + raycast.get_collision_normal() / 100
+		hole.basis = hole.basis.looking_at(raycast.get_collision_normal(), Vector3.UP)
+		hole.rotation.z += randf_range(-PI, PI)
+		get_parent().get_parent().get_parent().get_parent().get_parent().add_child(hole)
+
+func dealDamage(raycast, damage):
+	var body = raycast.get_collider()
+	var collision = body.shape_owner_get_owner(body.shape_find_owner(raycast.get_collider_shape()))
+	if body.is_class("CharacterBody3D") and body.has_method("modifyHP"):
+		if collision.name == "HeadHit":
+			body.modifyHP(-damage * 2)
+		elif collision.name == "BodyHit":
+			body.modifyHP(-damage)
 
 func _on_timer_timeout() -> void:
 	var tempAmmo = TotalAmmo

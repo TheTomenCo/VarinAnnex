@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhtsp0o03y005"]
+[gd_scene load_steps=7 format=3 uid="uid://dhtsp0o03y005"]
 
 [ext_resource type="Script" uid="uid://bj33f76m2kbxr" path="res://scripts/enemy.gd" id="1_7k104"]
 [ext_resource type="Texture2D" uid="uid://e7j0qbckv15k" path="res://icon.svg" id="2_md0e3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
+size = Vector3(1.9844971, 1.3096924, 0.3257141)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ra3w"]
+size = Vector3(1, 1, 0.326)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md0e3"]
 albedo_texture = ExtResource("2_md0e3")
@@ -9,18 +15,21 @@ albedo_texture = ExtResource("2_md0e3")
 [sub_resource type="PlaneMesh" id="PlaneMesh_7p1mj"]
 material = SubResource("StandardMaterial3D_md0e3")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
-size = Vector3(1.9844971, 1.980957, 0.42193604)
-
-[node name="Node3D" type="Node3D"]
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_7k104")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("PlaneMesh_7p1mj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0004272461, -0.025146484, -0.0057678223)
+[node name="BodyHit" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.361, 0)
 shape = SubResource("BoxShape3D_md0e3")
+
+[node name="HeadHit" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426, 0)
+shape = SubResource("BoxShape3D_4ra3w")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7p1mj")
+skeleton = NodePath("")

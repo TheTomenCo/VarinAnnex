@@ -10,8 +10,6 @@ func Save():
 	var save_data = {}
 	for child in get_children():
 		if child.is_in_group("Save"):
-			if child.name == "player":
-				child = child.get_child(0)
 			save_data.merge({child.name : child.save()})
 	var file = FileAccess.open("user://save.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
@@ -22,7 +20,6 @@ func Load():
 		if FileAccess.file_exists("user://save.json"):
 			var file = FileAccess.open("user://save.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
-			find_child("player").get_child(0).load(data["AbsolutePlayer"])
 			for entry in data:
 				var object = find_child(entry)
 				if is_instance_valid(object): 
