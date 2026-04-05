@@ -11,10 +11,11 @@ var slide_speed = speed + 10
 var cam
 var direction
 var input_dir
-
+var dashCounter = 0
 
 #start-up function
 func _ready():
+	add_to_group("Save")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cam = $CameraContainer
 	modifyHP(0)
@@ -78,14 +79,16 @@ func _physics_process(delta: float) -> void:
 
 #dashcooldown ended
 		if $dashCooldown.time_left == 0:
-			#print_debug("dash ready")
+			dashCounter = 0
 			pass
 
 #enable dash
-		if direction and Input.is_action_just_pressed("dash") and $dashCooldown.time_left == 0:
+		if direction and Input.is_action_just_pressed("dash") and ((dashCounter == 1 and HP > 100) or $dashCooldown.time_left == 0):
+			dashCounter += 1
 			$dashTimer.start()
 			$dashCooldown.start()
 			$dashStream.play()
+			$Hud.changeDashCooldown($dashCooldown.wait_time)
 			#print_debug("dash started")
 
 #during dash, increase speed
@@ -113,34 +116,25 @@ func fullHeal():
 	if $Hud:
 		$Hud.changeHp(HP)
 		
-func save_data():
+func save():
 	var weapons = $CameraContainer/weaponHandler
 	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
 	"hp" : HP,
-	"weapons" : weapons.weapons,
-	"selected_weapon" : weapons.selected, 
-	"ammo" : weapons.get_child(weapons.selected).Ammo, 
-	"total_ammo" : weapons.get_child(weapons.selected).TotalAmmo}
+	"weapons" : weapons.save()}
 	
-func load_data(data):
+func load(data):
 	var weapons = $CameraContainer/weaponHandler
 	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
 	HP = int(data["hp"])
-	weapons.weapons = data["weapons"]
-	weapons.selected = data["selected_weapon"]
-	weapons.addWeapon(0)
-	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
-	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
+	weapons.load(data["weapons"])
 	if $Hud:
-			$Hud.changeHp(HP)
-			$Hud.changeAmmo(int(data["ammo"]), weapons.get_child(weapons.selected).MaxAmmo)
-			$Hud.changeTotalAmmo(int(data["total_ammo"]))
-
+		$Hud.changeHp(HP)
+		$Hud.changeAmmo(weapons.get_child(weapons.selected).Ammo, weapons.get_child(weapons.selected).MaxAmmo)
+		$Hud.changeTotalAmmo(weapons.get_child(weapons.selected).TotalAmmo)
 
 #change to death scene
 func youDied():
 	get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
-
 
 #check if player died
 func deadCheck():

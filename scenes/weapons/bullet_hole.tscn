@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bw7emlchlsunk"]
 
-[ext_resource type="Texture2D" uid="uid://d33hedl3rfnpx" path="res://scenes/textures/bullet_hole_1.png" id="1_75sdo"]
+[ext_resource type="Texture2D" uid="uid://d33hedl3rfnpx" path="res://assets/textures/bullet_hole_1.png" id="1_75sdo"]
 [ext_resource type="Script" uid="uid://chkoi0mx1c4il" path="res://scripts/bullet_hole.gd" id="1_bqmt7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqmt7"]

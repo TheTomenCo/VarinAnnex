@@ -2,6 +2,7 @@ extends "res://scripts/weapon.gd"
 var pellets = 30
 
 func _ready() -> void:
+	scene = "res://scenes/weapons/shotgun.tscn"
 	HUD = get_parent().get_parent().get_parent().get_node("Hud")
 	MaxAmmo = 2
 	Ammo = MaxAmmo
@@ -34,6 +35,7 @@ func shoot():
 				if child is RayCast3D:
 					if child.is_colliding():
 						createBulletHole(child)
+						dealDamage(child, Damage)
 						hits += 1
 						collider = child
 					if child != $RayCast3D:

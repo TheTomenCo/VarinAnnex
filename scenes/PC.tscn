@@ -10,57 +10,56 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p1a4w"]
 
-[node name="player" type="Node3D"]
-
-[node name="AbsolutePlayer" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_upsj2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AbsolutePlayer"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 3
 mesh = SubResource("CapsuleMesh_p1a4w")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AbsolutePlayer"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_p1a4w")
 
-[node name="dashTimer" type="Timer" parent="AbsolutePlayer"]
+[node name="dashTimer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.06
 one_shot = true
 
-[node name="dashCooldown" type="Timer" parent="AbsolutePlayer"]
+[node name="dashCooldown" type="Timer" parent="."]
 one_shot = true
 
-[node name="invincibilityTimer" type="Timer" parent="AbsolutePlayer"]
+[node name="invincibilityTimer" type="Timer" parent="."]
 wait_time = 0.467
 one_shot = true
 
-[node name="Hud" parent="AbsolutePlayer" instance=ExtResource("2_qs3ox")]
+[node name="Hud" parent="." instance=ExtResource("2_qs3ox")]
+metadata/_edit_use_anchors_ = true
 
-[node name="CameraContainer" type="Node3D" parent="AbsolutePlayer"]
+[node name="CameraContainer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.795, 0)
 
-[node name="Camera3D" type="Camera3D" parent="AbsolutePlayer/CameraContainer"]
+[node name="Camera3D" type="Camera3D" parent="CameraContainer"]
 
-[node name="weaponHandler" parent="AbsolutePlayer/CameraContainer" instance=ExtResource("2_fioyg")]
+[node name="weaponHandler" parent="CameraContainer" instance=ExtResource("2_fioyg")]
 weapons = Array[PackedScene]([ExtResource("3_bgq5m")])
 
-[node name="doorHandler" type="Node3D" parent="AbsolutePlayer/CameraContainer"]
+[node name="doorHandler" type="Node3D" parent="CameraContainer"]
 script = ExtResource("4_kogni")
 
-[node name="RayCast3D" type="RayCast3D" parent="AbsolutePlayer/CameraContainer/doorHandler"]
+[node name="RayCast3D" type="RayCast3D" parent="CameraContainer/doorHandler"]
 transform = Transform3D(1, 0, 0, 0, -8.742278e-08, -1, 0, 2, -4.371139e-08, 0, 0, 0)
 debug_shape_thickness = 5
 
-[node name="Control" type="Control" parent="AbsolutePlayer/CameraContainer/doorHandler"]
+[node name="Control" type="Control" parent="CameraContainer/doorHandler"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 384.0
 offset_bottom = 192.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="AbsolutePlayer/CameraContainer/doorHandler/Control"]
+[node name="Label" type="Label" parent="CameraContainer/doorHandler/Control"]
 clip_contents = true
 layout_mode = 0
 offset_left = 208.0
@@ -70,13 +69,14 @@ offset_bottom = 376.0
 text = "Press %s to open"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="doubleJumpStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
+[node name="doubleJumpStream" type="AudioStreamPlayer3D" parent="."]
 
-[node name="dashStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
+[node name="dashStream" type="AudioStreamPlayer3D" parent="."]
 volume_db = -80.0
 
-[node name="damageStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
+[node name="damageStream" type="AudioStreamPlayer3D" parent="."]
 
-[node name="slideStream" type="AudioStreamPlayer3D" parent="AbsolutePlayer"]
+[node name="slideStream" type="AudioStreamPlayer3D" parent="."]
 volume_db = -10.874

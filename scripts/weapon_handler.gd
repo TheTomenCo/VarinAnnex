@@ -26,13 +26,18 @@ func addWeapon(Weapon):
 		selected = len(weapons) - 1
 		
 func save():
-	var data = {}
+	var children = {}
 	for child in get_children():
-		data.merge({child.name : {"Ammo" : child.Ammo, "TotalAmmo" : child.TotalAmmo}})
+		children.merge({child.name : {"Ammo" : child.Ammo, "TotalAmmo" : child.TotalAmmo, "scene" : child.scene}})
+	var data = {"children" : children, "selected" : selected}
 	return data
 	
 func load(data):
 	for child in get_children():
-		if is_instance_valid(child):
-			child.Ammo = int(data[child.name]["Ammo"])
-			child.TotalAmmo = int(data[child.name]["TotalAmmo"])
+		child.queue_free()
+	for entry in data["children"]:
+		var weapon = load(data["children"][entry]["scene"]).instantiate()
+		weapon.Ammo = int(data["children"][entry]["Ammo"])
+		weapon.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
+		add_child(weapon)
+	selected = data["selected"]

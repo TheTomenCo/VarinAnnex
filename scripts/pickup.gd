@@ -30,7 +30,7 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		change_color()
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(body : Node3D) -> void:
 	if not Engine.is_editor_hint():
 		if body.is_class("CharacterBody3D"):
 			var weaponHandler = body.get_node("CameraContainer/weaponHandler")
