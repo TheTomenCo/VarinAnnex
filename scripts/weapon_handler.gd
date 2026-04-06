@@ -21,8 +21,9 @@ func _input(event: InputEvent) -> void:
 
 func addWeapon(Weapon):
 	if Weapon not in weapons:
+		var object = Weapon.instantiate()
 		weapons.append(Weapon)
-		add_child(weapons[-1].instantiate())
+		add_child(object)
 		selected = len(weapons) - 1
 		
 func save():
@@ -37,7 +38,7 @@ func load(data):
 		child.queue_free()
 	for entry in data["children"]:
 		var weapon = load(data["children"][entry]["scene"]).instantiate()
+		add_child(weapon)
 		weapon.Ammo = int(data["children"][entry]["Ammo"])
 		weapon.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
-		add_child(weapon)
 	selected = data["selected"]
