@@ -34,11 +34,14 @@ func save():
 	return data
 	
 func load(data):
-	for child in get_children():
-		child.queue_free()
 	for entry in data["children"]:
-		var weapon = load(data["children"][entry]["scene"]).instantiate()
-		add_child(weapon)
-		weapon.Ammo = int(data["children"][entry]["Ammo"])
-		weapon.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
+		var object = get_node(entry)
+		if is_instance_valid(object):
+			object.Ammo = int(data["children"][entry]["Ammo"])
+			object.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
+		else:
+			addWeapon(load(data["children"][entry]["scene"]))
+			var weapon = get_child(-1)
+			weapon.Ammo = int(data["children"][entry]["Ammo"])
+			weapon.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
 	selected = data["selected"]
