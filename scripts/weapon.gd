@@ -56,7 +56,7 @@ func createBulletHole(raycast):
 		hole.position = raycast.get_collision_point() + raycast.get_collision_normal() / 100
 		hole.basis = hole.basis.looking_at(raycast.get_collision_normal(), Vector3.UP)
 		hole.rotation.z += randf_range(-PI, PI)
-		get_parent().get_parent().get_parent().get_parent().get_parent().add_child(hole)
+		get_tree().root.get_node("Level").add_child(hole)
 
 func dealDamage(raycast, damage):
 	var body = raycast.get_collider()
