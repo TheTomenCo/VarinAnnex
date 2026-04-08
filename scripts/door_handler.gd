@@ -5,7 +5,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func get_door() -> Node3D:
-	if $RayCast3D.is_colliding():
+	if $RayCast3D.is_colliding() and $RayCast3D.get_collider():
 		if $RayCast3D.get_collider().name == "Door":
 			var hit = $RayCast3D.get_collider().get_parent().get_parent()
 			#var pos = $RayCast3D.get_collision_point()

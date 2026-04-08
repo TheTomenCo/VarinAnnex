@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bo7uoegqx0s4s"]
 
 [ext_resource type="Script" uid="uid://dhsw3q3hk8arh" path="res://scripts/main_menu.gd" id="1_jf8mj"]
-[ext_resource type="VideoStream" uid="uid://qd0xo45hxh0" path="res://artAssets/VarinOne (3).ogv" id="2_2k0p2"]
-[ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://artAssets/buttons/STARTGAMEBase.png" id="3_2k0p2"]
-[ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://artAssets/buttons/STARTGAMEsELECT.png" id="4_y501u"]
-[ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://artAssets/buttons/OPTIONSBase.png" id="5_uayf2"]
-[ext_resource type="Texture2D" uid="uid://dcd7gv0yky817" path="res://artAssets/buttons/OPTIONSSelected.png" id="6_55uyf"]
-[ext_resource type="Texture2D" uid="uid://b4e5xp7su138s" path="res://artAssets/buttons/QUITBase.png" id="7_62ju1"]
-[ext_resource type="Texture2D" uid="uid://droxhtytbkddq" path="res://artAssets/buttons/QUITSelected.png" id="8_lx30u"]
+[ext_resource type="VideoStream" uid="uid://qd0xo45hxh0" path="res://assets/art/VarinOne (3).ogv" id="2_2k0p2"]
+[ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://assets/art/buttons/STARTGAMEBase.png" id="3_2k0p2"]
+[ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://assets/art/buttons/STARTGAMEsELECT.png" id="4_y501u"]
+[ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://assets/art/buttons/OPTIONSBase.png" id="5_uayf2"]
+[ext_resource type="Texture2D" uid="uid://dcd7gv0yky817" path="res://assets/art/buttons/OPTIONSSelected.png" id="6_55uyf"]
+[ext_resource type="Texture2D" uid="uid://b4e5xp7su138s" path="res://assets/art/buttons/QUITBase.png" id="7_62ju1"]
+[ext_resource type="Texture2D" uid="uid://droxhtytbkddq" path="res://assets/art/buttons/QUITSelected.png" id="8_lx30u"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_jf8mj")

@@ -445,7 +445,7 @@ transform = Transform3D(0.0021543682, 0, -0.04919928, 0, 0.6264121, 0, 0.5554119
 transform = Transform3D(1.039, 0, 0, 0, 16, 0, 0, 0, 6.35, 0.008820474, -8.130505, -3.5929508)
 
 [node name="setNewSpawn" parent="leftFlank/baseLevel" index="19" instance=ExtResource("17_l35oo")]
-transform = Transform3D(-11.358025, 0, -4.3612143e-08, 0, 76.27146, 0, 9.838906e-06, 0, -0.05034582, -0.0013072491, 0.49998856, 0.47029972)
+transform = Transform3D(-0.08258749, 0, -4.3612143e-08, 0, 40.743958, 0, 7.1541535e-08, 0, -0.05034581, -0.0013072491, 0.4999733, 0.47029972)
 
 [node name="floor17" parent="leftFlank/baseLevel" index="20" instance=ExtResource("3_ysste")]
 transform = Transform3D(0.015516397, 0, 0.02409395, 0, 1.0000001, 0, -0.113417394, 0, 0.3268604, -0.15436319, -0.0006713867, -4.7621098)
