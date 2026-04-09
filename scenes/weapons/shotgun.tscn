@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4xnswesf0mms"]
 
-[ext_resource type="PackedScene" uid="uid://cthe0bd35ymt5" path="res://scenes/Weapon.tscn" id="1_voyse"]
+[ext_resource type="PackedScene" uid="uid://cthe0bd35ymt5" path="res://scenes/weapons/Weapon.tscn" id="1_voyse"]
 [ext_resource type="Script" uid="uid://ddehun2cnkh8d" path="res://scripts/shotgun.gd" id="2_gnj2g"]
 
 [node name="Weapon" instance=ExtResource("1_voyse")]

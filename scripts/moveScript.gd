@@ -126,14 +126,7 @@ func load(data):
 	var weapons = $CameraContainer/weaponHandler
 	position = Vector3(data["position"]["x"], data["position"]["y"], data["position"]["z"])
 	HP = int(data["hp"])
-<<<<<<< Updated upstream
 	weapons.load(data["weapons"])
-=======
-	weapons.weapons = data["weapons"]
-	weapons.selected = data["selected_weapon"]
-	weapons.get_child(weapons.selected).Ammo = int(data["ammo"])
-	weapons.get_child(weapons.selected).TotalAmmo = int(data["total_ammo"])
->>>>>>> Stashed changes
 	if $Hud:
 		$Hud.changeHp(HP)
 		$Hud.changeAmmo(weapons.get_child(weapons.selected).Ammo, weapons.get_child(weapons.selected).MaxAmmo)
