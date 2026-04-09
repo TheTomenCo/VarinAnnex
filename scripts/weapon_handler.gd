@@ -22,6 +22,7 @@ func _input(event: InputEvent) -> void:
 func addWeapon(Weapon):
 	if Weapon not in weapons:
 		weapons.append(Weapon)
+<<<<<<< Updated upstream
 		add_child(weapons[-1].instantiate())
 		selected = len(weapons) - 1
 		
@@ -41,3 +42,6 @@ func load(data):
 		weapon.TotalAmmo = int(data["children"][entry]["TotalAmmo"])
 		add_child(weapon)
 	selected = data["selected"]
+=======
+	add_child(weapons[-1].instantiate())
+>>>>>>> Stashed changes

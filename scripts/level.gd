@@ -1,4 +1,5 @@
 extends Node3D
+const bulletHole = preload("res://scenes/weapons/bullet_hole.tscn")
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("save"):
@@ -18,6 +19,9 @@ func Load():
 	get_tree().paused = true
 	if FileAccess.file_exists("res://save.tscn"):
 		if FileAccess.file_exists("user://save.json"):
+			for child in get_children():
+				if child.is_in_group("Temporary"):
+					child.queue_free()
 			var file = FileAccess.open("user://save.json", FileAccess.READ)
 			var data = JSON.parse_string(file.get_as_text())
 			for entry in data:
