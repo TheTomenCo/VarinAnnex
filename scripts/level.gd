@@ -16,7 +16,6 @@ func Save():
 	file.store_string(JSON.stringify(save_data))
 
 func Load():
-	get_tree().paused = true
 	if FileAccess.file_exists("res://save.tscn"):
 		if FileAccess.file_exists("user://save.json"):
 			for child in get_children():
@@ -37,4 +36,3 @@ func Load():
 			for child in get_children():
 				if child.is_in_group("Temporary"):
 					child.queue_free()
-	get_tree().paused = false
