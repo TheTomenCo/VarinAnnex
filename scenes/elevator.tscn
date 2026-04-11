@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3wvupdlpac81"]
+
+[ext_resource type="PackedScene" uid="uid://dhkee3l401cut" path="res://scenes/BlenderImports/elevator.blend" id="1_8o2wm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lbij"]
+size = Vector3(2.0723267, 11.203369, 10.844849)
+
+[node name="elevator" type="Node3D"]
+
+[node name="elevator" parent="." instance=ExtResource("1_8o2wm")]
+transform = Transform3D(0.44563812, 0, 0, 0, 0.44563812, 0, 0, 0, 0.44563812, -0.06697643, -1.1920929e-07, -0.11175108)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="elevator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11630252, 5.1016855, -0.2662963)
+shape = SubResource("BoxShape3D_8lbij")

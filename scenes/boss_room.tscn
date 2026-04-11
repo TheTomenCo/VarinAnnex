@@ -1,6 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cucilbjfokcsy"]
+[gd_scene load_steps=11 format=3 uid="uid://cucilbjfokcsy"]
+
+[ext_resource type="PackedScene" uid="uid://d3wvupdlpac81" path="res://scenes/elevator.tscn" id="1_3n20u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qekxp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qekxp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3n20u"]
 
@@ -24,6 +28,7 @@ transform = Transform3D(140, 0, 0, 0, 0.091, 0, 0, 0, 140, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_qekxp")
+surface_material_override/0 = SubResource("StandardMaterial3D_qekxp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_3n20u")
@@ -80,7 +85,7 @@ shape = SubResource("BoxShape3D_bpcqn")
 mesh = SubResource("BoxMesh_673pk")
 
 [node name="backwall" type="Node3D" parent="."]
-transform = Transform3D(0.137, 0, 0, 0, 9.855, 0, 0, 0, 33.609066, 69.56122, 4.223345, -53.463177)
+transform = Transform3D(0.137, 0, 0, 0, 9.855, 0, 0, 0, 36.88593, 69.56122, 4.223345, -52.23148)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="backwall"]
 mesh = SubResource("BoxMesh_3n20u")
@@ -107,10 +112,10 @@ mesh = SubResource("BoxMesh_qekxp")
 shape = SubResource("BoxShape3D_3n20u")
 
 [node name="backwall2" type="Node3D" parent="."]
-transform = Transform3D(0.28692117, 0, 0, 0, 9.855, 0, 0, 0, 33.609066, 69.095, 4.223, 0)
+transform = Transform3D(0.28692117, 0, 0, 0, 9.855, 0, 0, 0, 37.409595, 69.095, 4.223, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="backwall2"]
-transform = Transform3D(4.4466677, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(4.4466677, 0, 0, 0, 0.9999999, 0, 0, 0, 1.4005814, 0, 0, 0)
 mesh = SubResource("BoxMesh_3n20u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="backwall2"]
@@ -124,3 +129,9 @@ mesh = SubResource("BoxMesh_3n20u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="backwall3"]
 shape = SubResource("BoxShape3D_673pk")
+
+[node name="elevator" parent="." instance=ExtResource("1_3n20u")]
+transform = Transform3D(-1.6081009, 0, -1.4058465e-07, 0, 1.6081009, 0, 1.4058465e-07, 0, -1.6081009, 69.28258, 0, 29.652613)
+
+[node name="elevator2" parent="." instance=ExtResource("1_3n20u")]
+transform = Transform3D(-1.6081009, 0, -1.4058465e-07, 0, 1.7637918, 0, 1.4058465e-07, 0, -1.6081009, 69.28258, 0.47976923, -30.332958)
