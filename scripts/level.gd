@@ -16,23 +16,19 @@ func Save():
 	file.store_string(JSON.stringify(save_data))
 
 func Load():
-	if FileAccess.file_exists("res://save.tscn"):
-		if FileAccess.file_exists("user://save.json"):
-			for child in get_children():
-				if child.is_in_group("Temporary"):
-					child.queue_free()
-			var file = FileAccess.open("user://save.json", FileAccess.READ)
-			var data = JSON.parse_string(file.get_as_text())
-			for entry in data:
-				var object = find_child(entry)
-				if is_instance_valid(object): 
-					if object.has_method("load"):
-						object.load(data[object.name])
-				else:
-					object = load(data[entry]["scene"]).instantiate()
-					add_child(object)
-					if object.has_method("load"):
-						object.load(data[entry])
-			for child in get_children():
-				if child.is_in_group("Temporary"):
-					child.queue_free()
+	if FileAccess.file_exists("user://save.json"):
+		var file = FileAccess.open("user://save.json", FileAccess.READ)
+		var data = JSON.parse_string(file.get_as_text())
+		for entry in data:
+			var object = find_child(entry)
+			if is_instance_valid(object): 
+				if object.has_method("load"):
+					object.load(data[object.name])
+			else:
+				object = load(data[entry]["scene"]).instantiate()
+				add_child(object)
+				if object.has_method("load"):
+					object.load(data[entry])
+		for child in get_children():
+			if child.is_in_group("Temporary"):
+				child.queue_free()
