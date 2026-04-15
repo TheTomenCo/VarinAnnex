@@ -11,9 +11,10 @@ func _ready() -> void:
 	Cooldown = 0.5
 	ReloadTime = 0.5
 	maxRange = 10
+	spread = PI/6
 	reloadTimer = createReloadTimer()
-	$CooldownTimer.wait_time = Cooldown
 	reloadTimer.wait_time = ReloadTime
+	$CooldownTimer.wait_time = Cooldown
 	$RayCast3D.scale.y = maxRange
 	modifyAmmo(0)
 
@@ -26,8 +27,8 @@ func shoot():
 			for i in range(pellets - 1):
 				var raycast = $RayCast3D.duplicate()
 				add_child(raycast)
-				raycast.rotate_y(randf_range(-PI/6, PI/6))
-				raycast.rotate_x(randf_range(-PI/6, PI/6))
+				raycast.rotate_y(randf_range(-spread, spread))
+				raycast.rotate_x(randf_range(-spread, spread))
 				raycast.force_raycast_update()
 			var hits = 0
 			var collider

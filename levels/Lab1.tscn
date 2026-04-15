@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cuaejbn6posd0"]
+[gd_scene load_steps=25 format=3 uid="uid://cuaejbn6posd0"]
 
 [ext_resource type="PackedScene" uid="uid://dbpfr8t68h4g8" path="res://levels/Level.tscn" id="1_i6or5"]
 [ext_resource type="PackedScene" uid="uid://uw1v3o4g56yx" path="res://scenes/wall.tscn" id="2_qpwx5"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bw5gwsflf12gk" path="res://scenes/secretWall.tscn" id="8_17ebi"]
 [ext_resource type="PackedScene" uid="uid://c35cg4jnlgr2r" path="res://scenes/pillar.tscn" id="8_j5mio"]
 [ext_resource type="PackedScene" uid="uid://c4xnswesf0mms" path="res://scenes/weapons/shotgun.tscn" id="9_7dxg8"]
-[ext_resource type="PackedScene" uid="uid://bf4etqq7pkd28" path="res://scenes/weapons/trigger.tscn" id="9_7w6vf"]
+[ext_resource type="PackedScene" uid="uid://bf4etqq7pkd28" path="res://scenes/trigger.tscn" id="9_7w6vf"]
+[ext_resource type="PackedScene" uid="uid://bbrdldfca6gym" path="res://scenes/weapons/automaticRifle.tscn" id="10_3paqy"]
 [ext_resource type="PackedScene" uid="uid://bcob3f7o78rfi" path="res://assets/meshes/props/wallLight.blend" id="10_psfkb"]
 [ext_resource type="PackedScene" uid="uid://blwy1d6adleoy" path="res://scenes/crt_monitor_full.tscn" id="10_uxm8k"]
 [ext_resource type="PackedScene" uid="uid://deki7j3vqsn7k" path="res://scenes/pickup.tscn" id="11_1igf4"]
@@ -16,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://gwlqleu7fu1n" path="res://assets/meshes/props/garagedoor.blend" id="15_4o8c2"]
 [ext_resource type="PackedScene" uid="uid://b0fat4j2jtp6r" path="res://scenes/acid.tscn" id="15_i6or5"]
 [ext_resource type="PackedScene" uid="uid://byp6tbqdaqbxi" path="res://scenes/cargo_pallet.tscn" id="17_41gfr"]
-[ext_resource type="PackedScene" uid="uid://cvvwnxr1twgbc" path="res://set_new_spawn.tscn" id="17_l35oo"]
+[ext_resource type="PackedScene" uid="uid://cvvwnxr1twgbc" path="res://scenes/set_new_spawn.tscn" id="17_l35oo"]
 [ext_resource type="PackedScene" uid="uid://d0ncf8j6nkqsi" path="res://scenes/LabDesk.tscn" id="17_pka41"]
 [ext_resource type="PackedScene" uid="uid://c3ux5fb78uac3" path="res://scenes/acid_wall.tscn" id="19_7dxg8"]
 [ext_resource type="PackedScene" uid="uid://blg2ueskplkq7" path="res://scenes/chem_tank.tscn" id="19_jljs5"]
@@ -328,7 +329,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -0.5517
 type = 2
 WeaponScene = ExtResource("9_7dxg8")
 
-[node name="leftFlank" type="Node3D" parent="." index="7"]
+[node name="Pickup4" parent="." index="7" instance=ExtResource("11_1igf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.305202, 1.1959146, -6.8463445)
+type = 2
+WeaponScene = ExtResource("10_3paqy")
+
+[node name="leftFlank" type="Node3D" parent="." index="8"]
 
 [node name="StairOrchestrator2" parent="leftFlank" index="0" instance=ExtResource("13_17ebi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.22774, -10.881, -168.29)
@@ -486,7 +492,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 1.973774, -0.16169
 [node name="floor20" parent="leftFlank/baseLevel" index="36" instance=ExtResource("3_ysste")]
 transform = Transform3D(0.01814034, 0, -0.020727558, 0, 1, 0, 0.8927446, 0, 0.041764725, 0.089249104, -0.0006713867, -1.798933)
 
-[node name="leftFlank2" type="Node3D" parent="." index="8"]
+[node name="leftFlank2" type="Node3D" parent="." index="9"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 168.714, 0, 25.99)
 
 [node name="floor" parent="leftFlank2" index="0" instance=ExtResource("3_ysste")]
@@ -523,10 +529,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.31815, -7.6293945e-06, -23
 light_energy = 4.261
 omni_range = 174.627
 
-[node name="Enemy" parent="." index="10" instance=ExtResource("21_7dxg8")]
+[node name="Enemy" parent="." index="11" instance=ExtResource("21_7dxg8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.49562, 1.3324999, 74.079285)
 
-[node name="MainFloorNavigation" type="NavigationRegion3D" parent="." index="11"]
+[node name="MainFloorNavigation" type="NavigationRegion3D" parent="." index="12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.06004, 0, 64.875824)
 navigation_mesh = SubResource("NavigationMesh_jljs5")
 
@@ -785,5 +791,5 @@ transform = Transform3D(-3.2918044e-09, 0, 0.01457025, 0, 15.829921, 0, -0.07385
 [node name="garagedoor4" parent="MainFloorNavigation/mainFloor" index="35" instance=ExtResource("15_4o8c2")]
 transform = Transform3D(-3.2918044e-09, 0, 0.01457025, 0, 15.829921, 0, -0.07385489, 0, -6.2459926e-10, -1.1239098, 55.827244, 0.013307789)
 
-[node name="BossRoom" parent="." index="12" instance=ExtResource("22_ds7cq")]
+[node name="BossRoom" parent="." index="13" instance=ExtResource("22_ds7cq")]
 transform = Transform3D(1, 0, 0, 0, 1.075, 0, 0, 0, 1, 324.062, 0.075, 0)

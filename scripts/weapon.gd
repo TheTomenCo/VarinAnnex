@@ -6,10 +6,12 @@ var Damage = 10
 var Cooldown = 0.5
 var ReloadTime = 0.5
 var maxRange = 32
+var spread = 0
 var bulletHole = preload("res://scenes/weapons/bullet_hole.tscn")
 var reloadTimer
 var HUD
 var scene = "res://scenes/weapons/pistol.tscn"
+var automatic = false
 
 func _ready() -> void:
 	HUD = get_parent().get_parent().get_parent().get_node("Hud")

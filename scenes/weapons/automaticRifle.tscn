@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbrdldfca6gym"]
+
+[ext_resource type="PackedScene" uid="uid://cthe0bd35ymt5" path="res://scenes/weapons/Weapon.tscn" id="1_jfgv0"]
+[ext_resource type="Script" uid="uid://bcb56l55waujn" path="res://scripts/automatic_rifle.gd" id="2_aspde"]
+
+[node name="Rifle" instance=ExtResource("1_jfgv0")]
+script = ExtResource("2_aspde")

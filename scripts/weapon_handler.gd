@@ -8,9 +8,15 @@ func _ready() -> void:
 			var instance = weapon.instantiate()
 			add_child(instance)
 
+func _process(delta: float) -> void:
+	if (Input.is_action_pressed("shoot") and get_child(selected).automatic):
+		get_child(selected).shoot()
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		get_child(selected).shoot()
+		if get_child(selected).automatic == true:
+			get_child(selected).shootingTimer.start()
 	if Input.is_action_just_pressed("reload"):
 		get_child(selected).reload()
 	for i in range(1, get_child_count() + 1):
