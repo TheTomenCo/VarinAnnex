@@ -15,14 +15,20 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		get_child(selected).shoot()
-		if get_child(selected).automatic == true:
+		if get_child(selected).automatic:
 			get_child(selected).shootingTimer.start()
+	if Input.is_action_just_released("shoot") and get_child(selected).automatic:
+		get_child(selected).shootingTimer.stop()
 	if Input.is_action_just_pressed("reload"):
 		get_child(selected).reload()
 	for i in range(1, get_child_count() + 1):
 		if Input.is_action_just_pressed("slot%d" % i) and get_child(i - 1):
 			get_child(selected).get_child(-1).stop()
+			if get_child(selected).get_child(0) is Node3D:
+				get_child(selected).get_child(0).visible = false
 			selected = i - 1
+			if get_child(selected).get_child(0) is Node3D:
+				get_child(selected).get_child(0).visible = true
 			get_child(selected).modifyAmmo(0)
 
 func addWeapon(Weapon):
@@ -30,7 +36,11 @@ func addWeapon(Weapon):
 		var object = Weapon.instantiate()
 		weapons.append(Weapon)
 		add_child(object)
+		if get_child(selected).get_child(0) is Node3D:
+				get_child(selected).get_child(0).visible = false
 		selected = len(weapons) - 1
+		if get_child(selected).get_child(0) is Node3D:
+			get_child(selected).get_child(0).visible = true
 		
 func save():
 	var children = {}

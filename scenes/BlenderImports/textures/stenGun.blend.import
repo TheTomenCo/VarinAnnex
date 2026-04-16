@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfdi5v32hr030"
-path="res://.godot/imported/pistol.blend-f85e8a181f3cad937766e3d0f9e22f7c.scn"
+uid="uid://6dwsrb6rvfh2"
+path="res://.godot/imported/stenGun.blend-692dee9d3589f143fc549b5bf7ffc707.scn"
 
 [deps]
 
-source_file="res://scenes/pistol.blend"
-dest_files=["res://.godot/imported/pistol.blend-f85e8a181f3cad937766e3d0f9e22f7c.scn"]
+source_file="res://scenes/BlenderImports/textures/stenGun.blend"
+dest_files=["res://.godot/imported/stenGun.blend-692dee9d3589f143fc549b5bf7ffc707.scn"]
 
 [params]
 
