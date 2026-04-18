@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy6oqmatbu0j3"]
+
+[ext_resource type="Texture2D" uid="uid://cb7ywr5j3sjw7" path="res://assets/textures/blockedDoor.png" id="1_e5qbm"]
+[ext_resource type="Script" uid="uid://62jo38fy2vmi" path="res://scripts/blocked_door.gd" id="1_ff5jd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ff5jd"]
+transparency = 1
+albedo_texture = ExtResource("1_e5qbm")
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.17
+uv1_scale = Vector3(0.99, 0.99, 0.99)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uyptb"]
+material = SubResource("StandardMaterial3D_ff5jd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ff5jd"]
+size = Vector3(2.0028076, 1.9893799, 0.21801758)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5qbm"]
+size = Vector3(4.0002747, 4.032257, 0.21801758)
+
+[node name="BlockedDoor" type="Node3D" node_paths=PackedStringArray("enemies")]
+script = ExtResource("1_ff5jd")
+enemies = [null, null, null]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.005620539, 0.010631323, -0.004491687)
+mesh = SubResource("PlaneMesh_uyptb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003338337, -0.013122559, 0.0030517578)
+shape = SubResource("BoxShape3D_ff5jd")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010726929, -0.010726929, 0)
+shape = SubResource("BoxShape3D_e5qbm")
+
+[connection signal="body_shape_exited" from="Area3D" to="." method="_on_area_3d_body_shape_exited"]

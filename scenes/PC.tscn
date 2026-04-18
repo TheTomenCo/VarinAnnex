@@ -30,7 +30,7 @@ one_shot = true
 one_shot = true
 
 [node name="invincibilityTimer" type="Timer" parent="."]
-wait_time = 0.467
+wait_time = 0.45
 one_shot = true
 
 [node name="Hud" parent="." instance=ExtResource("2_qs3ox")]

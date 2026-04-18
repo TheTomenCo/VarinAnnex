@@ -2,24 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clfswges153mk"
-path.s3tc="res://.godot/imported/bullet_Normal_OpenGL.jpg-2e18888d2863e034f907b3d344831c28.s3tc.ctex"
+uid="uid://cb7ywr5j3sjw7"
+path="res://.godot/imported/blockedDoor.png-3ccaa71fcfd96bd433500300f505ad74.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://scenes/BlenderImports/textures/textures/bullet_Normal_OpenGL.jpg"
-dest_files=["res://.godot/imported/bullet_Normal_OpenGL.jpg-2e18888d2863e034f907b3d344831c28.s3tc.ctex"]
+source_file="res://assets/textures/blockedDoor.png"
+dest_files=["res://.godot/imported/blockedDoor.png-3ccaa71fcfd96bd433500300f505ad74.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
@@ -27,8 +25,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://scenes/BlenderImports/textures/textures/bullet_Normal_OpenGL.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

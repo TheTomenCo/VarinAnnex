@@ -30,19 +30,13 @@ func shoot():
 				raycast.rotate_y(randf_range(-spread, spread))
 				raycast.rotate_x(randf_range(-spread, spread))
 				raycast.force_raycast_update()
-			var hits = 0
-			var collider
 			for child in get_children():
 				if child is RayCast3D:
 					if child.is_colliding():
 						createBulletHole(child)
 						dealDamage(child, Damage)
-						hits += 1
-						collider = child
 					if child != $RayCast3D:
 						remove_child(child)
-			if collider:
-				print(hits, " pellets hit ", collider.get_collider().get_parent().name, " at ", collider.get_collision_point(), " and dealt a total of ", Damage*hits, " damage")
 				
 	if HUD:
 		HUD.changeAmmo(Ammo, MaxAmmo)

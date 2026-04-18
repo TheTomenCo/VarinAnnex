@@ -28,7 +28,6 @@ func shoot():
 			Ammo -= 1
 			print(Ammo, " bullets left")
 			if $RayCast3D.is_colliding():
-				print("Hit ", $RayCast3D.get_collider().get_parent().name, " at ", $RayCast3D.get_collision_point(), " and dealt ", Damage, " damage")
 				createBulletHole($RayCast3D)
 				dealDamage($RayCast3D, Damage)
 	if HUD:

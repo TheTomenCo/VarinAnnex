@@ -17,6 +17,7 @@ material = SubResource("StandardMaterial3D_md0e3")
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_7k104")
+damage = 20
 
 [node name="BodyHit" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.361, 0)
