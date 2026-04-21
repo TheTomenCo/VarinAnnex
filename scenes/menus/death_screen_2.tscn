@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt4vkbee1imlq"]
+
+[ext_resource type="Script" uid="uid://bcd0h4skkxoes" path="res://scripts/death_screen.gd" id="1_fd1p5"]
+[ext_resource type="Texture2D" uid="uid://uvok1gxsns4" path="res://assets/art/buttons/againSamp1.png" id="1_la152"]
+[ext_resource type="Texture2D" uid="uid://wj3x1ds6b20v" path="res://assets/art/buttons/quitSamp1.png" id="2_hau0i"]
+
+[node name="DeathScreen2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fd1p5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 23.928406
+offset_bottom = 24.09329
+scale = Vector2(48.143616, 26.895452)
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="play again" type="TextureButton" parent="Control"]
+layout_mode = 1
+offset_right = 836.0
+offset_bottom = 357.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_la152")
+
+[node name="quit to menu" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -836.0
+offset_top = -357.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(836, 357)
+texture_normal = ExtResource("2_hau0i")
+
+[connection signal="pressed" from="Control/play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Control/quit to menu" to="." method="_on_quit_to_menu_pressed"]

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,4 +16,4 @@ func _on_play_again_pressed() -> void:
 
 
 func _on_quit_to_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu_2.tscn")

@@ -121,9 +121,9 @@ func fullHeal():
 		
 func save():
 	var weapons = $CameraContainer/weaponHandler
-	return {"position" : {"x" : position.x, "y" : position.y, "z" : position.z},
-	"hp" : HP,
-	"weapons" : weapons.save()}
+	return {"position": {"x": position.x, "y": position.y, "z": position.z},
+	"hp": HP,
+	"weapons": weapons.save()}
 	
 func load(data):
 	var weapons = $CameraContainer/weaponHandler
@@ -137,7 +137,7 @@ func load(data):
 
 #change to death scene
 func youDied():
-	get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/death_screen_2.tscn")
 
 #check if player died
 func deadCheck():

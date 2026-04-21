@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://cjjvnyudpw702"]
 
-[ext_resource type="Script" uid="uid://cn725xicvml78" path="res://scripts/hud.gd" id="1_qpvh6"]
 [ext_resource type="Texture2D" uid="uid://cscy7vemv8cys" path="res://assets/art/UI/HealthBarBackground.png" id="2_4maxk"]
 [ext_resource type="Texture2D" uid="uid://bxpliyucr2now" path="res://assets/art/UI/BulletIcon.png" id="2_dhgmt"]
 [ext_resource type="Texture2D" uid="uid://dvlysltceb1it" path="res://assets/art/UI/HealthBar.png" id="3_v3b6h"]
@@ -20,7 +19,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_qpvh6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -105,6 +103,7 @@ offset_bottom = 1077.0
 theme_override_font_sizes/font_size = 60
 text = "0
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="BulletIcon" type="Sprite2D" parent="CanvasLayer/Ammo"]
 position = Vector2(810, 950)
@@ -124,12 +123,10 @@ offset_bottom = 1075.0
 theme_override_font_sizes/font_size = 60
 text = "0
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="DashCooldown" type="Timer" parent="."]
 one_shot = true
 
 [node name="DiscretionTimer" type="Timer" parent="."]
 wait_time = 0.05
-
-[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
-[connection signal="timeout" from="DiscretionTimer" to="." method="_on_discretion_timer_timeout"]

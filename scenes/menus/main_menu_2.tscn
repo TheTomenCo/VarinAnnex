@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8g28i7mtscod"]
+
+[ext_resource type="Script" uid="uid://dhsw3q3hk8arh" path="res://scripts/main_menu.gd" id="1_06ubg"]
+[ext_resource type="Texture2D" uid="uid://llisuymaimsx" path="res://assets/art/buttons/STARTGAMEBase.png" id="1_dou8k"]
+[ext_resource type="Texture2D" uid="uid://b8ug8ibqklhht" path="res://assets/art/buttons/STARTGAMEsELECT.png" id="2_bvhpo"]
+[ext_resource type="Texture2D" uid="uid://do1ywak47igko" path="res://assets/art/buttons/OPTIONSBase.png" id="3_06ubg"]
+[ext_resource type="Texture2D" uid="uid://dcd7gv0yky817" path="res://assets/art/buttons/OPTIONSSelected.png" id="4_bpnq0"]
+[ext_resource type="Texture2D" uid="uid://b4e5xp7su138s" path="res://assets/art/buttons/QUITBase.png" id="5_e0cxo"]
+[ext_resource type="Texture2D" uid="uid://droxhtytbkddq" path="res://assets/art/buttons/QUITSelected.png" id="6_ajlwl"]
+[ext_resource type="VideoStream" uid="uid://qd0xo45hxh0" path="res://assets/art/VarinOne (3).ogv" id="7_bvhpo"]
+
+[node name="MainMenu2" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06ubg")
+
+[node name="mainMenuAnimationPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("7_bvhpo")
+autoplay = true
+loop = true
+
+[node name="start" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -138.99997
+offset_right = 661.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.31797883, 0.3955383)
+texture_normal = ExtResource("1_dou8k")
+texture_hover = ExtResource("2_bvhpo")
+
+[node name="settings" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 864.0
+offset_bottom = 293.0
+scale = Vector2(0.30218434, 0.39316532)
+texture_normal = ExtResource("3_06ubg")
+texture_hover = ExtResource("4_bpnq0")
+
+[node name="exit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -318.0
+offset_top = 64.0
+offset_right = 466.00012
+offset_bottom = 293.0
+grow_horizontal = 0
+scale = Vector2(0.33010194, 0.39781943)
+texture_normal = ExtResource("5_e0cxo")
+texture_hover = ExtResource("6_ajlwl")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

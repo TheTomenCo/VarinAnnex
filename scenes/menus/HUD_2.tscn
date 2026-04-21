@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8rfvb0capgxy"]
+
+[ext_resource type="Script" uid="uid://cn725xicvml78" path="res://scripts/hud.gd" id="1_qpvh6"]
+[ext_resource type="Texture2D" uid="uid://bayyttah060k5" path="res://assets/art/UI/Crosshair.png" id="1_ylf5t"]
+[ext_resource type="Texture2D" uid="uid://cscy7vemv8cys" path="res://assets/art/UI/HealthBarBackground.png" id="2_7pls5"]
+[ext_resource type="Texture2D" uid="uid://b21so58dg1o3r" path="res://assets/art/UI/HealthBarBackgroundOvercharge.png" id="3_4crvh"]
+[ext_resource type="Texture2D" uid="uid://dvlysltceb1it" path="res://assets/art/UI/HealthBar.png" id="4_lqn5u"]
+[ext_resource type="Texture2D" uid="uid://dptjko8h4rjuj" path="res://assets/art/UI/HealthBarOvercharge.png" id="5_e2xp2"]
+[ext_resource type="Texture2D" uid="uid://mku2ogk4ehlw" path="res://assets/art/UI/Dash.png" id="6_uqwk1"]
+[ext_resource type="Texture2D" uid="uid://chnrcp3wcgfvu" path="res://assets/art/UI/DashOvercharge.png" id="7_h0837"]
+[ext_resource type="Texture2D" uid="uid://didflm33l2vyj" path="res://assets/art/UI/WeaponSelectDetails.png" id="8_v8cot"]
+[ext_resource type="Texture2D" uid="uid://dfob6c3xvnsmx" path="res://assets/art/UI/WeaponSelectDetailsOvercharge.png" id="9_dpwe6"]
+[ext_resource type="Texture2D" uid="uid://bxpliyucr2now" path="res://assets/art/UI/BulletIcon.png" id="10_klb1c"]
+
+[node name="Hud2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qpvh6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Crosshair" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 320)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_ylf5t")
+
+[node name="Health" type="CanvasGroup" parent="CanvasLayer"]
+position = Vector2(32, 480)
+scale = Vector2(0.5, 0.5)
+
+[node name="HealthBarBackground" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(395.40002, 120.599976)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_7pls5")
+
+[node name="HealthBarBackgroundOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(395.4, 120.59997)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_4crvh")
+
+[node name="HealthBar" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(240.40002, 143.60004)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("4_lqn5u")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1275, 97)
+
+[node name="HealthBarOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(240.39996, 143.60016)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("5_e2xp2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1275, 97)
+
+[node name="Dash" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(240.40004, 201.59998)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_uqwk1")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 420, 50)
+
+[node name="DashOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(240.40002, 201.59985)
+scale = Vector2(0.40000004, 0.40000004)
+texture = ExtResource("7_h0837")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 420, 50)
+
+[node name="WeaponSelectDetails" type="Sprite2D" parent="CanvasLayer/Health"]
+position = Vector2(116.400024, 116.599915)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("8_v8cot")
+
+[node name="WeaponSelectDetailsOvercharge" type="Sprite2D" parent="CanvasLayer/Health"]
+visible = false
+position = Vector2(116.39996, 116.60004)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("9_dpwe6")
+
+[node name="Ammo" type="CanvasGroup" parent="CanvasLayer"]
+position = Vector2(256, 584)
+scale = Vector2(0.6, 0.6)
+
+[node name="TotalAmmo" type="Label" parent="CanvasLayer/Ammo"]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.85200006
+anchor_right = 0.026
+anchor_bottom = 0.85200006
+offset_left = 303.10013
+offset_top = 2.0000114
+offset_right = 473.10013
+offset_bottom = 171.00002
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="BulletIcon" type="Sprite2D" parent="CanvasLayer/Ammo"]
+position = Vector2(14.099992, 43.999886)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_klb1c")
+
+[node name="Ammo" type="Label" parent="CanvasLayer/Ammo"]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.85200006
+anchor_right = 0.026
+anchor_bottom = 0.85200006
+offset_left = 56.100117
+offset_top = 1.1444092e-05
+offset_right = 226.10011
+offset_bottom = 169.00002
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="DashCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="DiscretionTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="DiscretionTimer" to="." method="_on_discretion_timer_timeout"]
